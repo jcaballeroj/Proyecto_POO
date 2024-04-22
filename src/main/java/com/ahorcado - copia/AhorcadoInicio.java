@@ -39,21 +39,59 @@ public class AhorcadoInicio extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel33 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
         background_ahorcado = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        palabra_facil = new javax.swing.JLabel();
+        z_facil1 = new javax.swing.JButton();
+        y_facil = new javax.swing.JButton();
+        x_facil = new javax.swing.JButton();
+        w_facil = new javax.swing.JButton();
+        v_facil = new javax.swing.JButton();
+        t_facil = new javax.swing.JButton();
+        u_facil = new javax.swing.JButton();
+        k_facil = new javax.swing.JButton();
+        a_facil = new javax.swing.JButton();
+        b_facil = new javax.swing.JButton();
+        l_facil = new javax.swing.JButton();
+        c_facil = new javax.swing.JButton();
+        m_facil = new javax.swing.JButton();
+        d_facil = new javax.swing.JButton();
+        n_facil = new javax.swing.JButton();
+        e_facil = new javax.swing.JButton();
+        o_facil = new javax.swing.JButton();
+        f_facil = new javax.swing.JButton();
+        p_facil = new javax.swing.JButton();
+        q_facil = new javax.swing.JButton();
+        h_facil = new javax.swing.JButton();
+        i_facil = new javax.swing.JButton();
+        r_facil = new javax.swing.JButton();
+        j_facil = new javax.swing.JButton();
+        s_facil = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        g_facil1 = new javax.swing.JButton();
 
         jPanel33.setBackground(new java.awt.Color(190, 7, 55));
 
@@ -68,18 +106,134 @@ public class AhorcadoInicio extends javax.swing.JFrame {
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
+        jPanel4.setBackground(new java.awt.Color(146, 154, 171));
+
+        jLabel13.setFont(new java.awt.Font("Lemon Juice", 1, 36)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(57, 62, 70));
+        jLabel13.setText("VIDAS");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addComponent(jLabel13)
+                .addGap(15, 15, 15))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel13)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel6.setBackground(new java.awt.Color(204, 207, 217));
+
+        jLabel15.setFont(new java.awt.Font("Avocado Cake", 0, 24)); // NOI18N
+        jLabel15.setText("adivina cuál es");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel15)
+                .addGap(22, 22, 22))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel15)
+                .addContainerGap())
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        background_ahorcado.setBackground(new java.awt.Color(146, 156, 171));
-        background_ahorcado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(146, 154, 171), 4));
+        background_ahorcado.setBackground(new java.awt.Color(255, 255, 255));
+        background_ahorcado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(57, 62, 70), 15));
 
         jLabel1.setFont(new java.awt.Font("BubbleGum", 0, 72)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(56, 62, 70));
         jLabel1.setText("AHORCADO");
+
+        jPanel3.setBackground(new java.awt.Color(57, 62, 70));
+        jPanel3.setPreferredSize(new java.awt.Dimension(347, 270));
+
+        jLabel7.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("a");
+
+        jLabel8.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("c");
+
+        jLabel9.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("f");
+
+        jLabel10.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("i");
+
+        jLabel11.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("l");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel7))
+                .addContainerGap(13, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(19, 19, 19))
+        );
+
+        jPanel5.setBackground(new java.awt.Color(204, 207, 217));
+
+        jLabel14.setFont(new java.awt.Font("Avocado Cake", 0, 24)); // NOI18N
+        jLabel14.setText("tu palabra tiene tres letras");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel14)
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel14)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         jPanel2.setBackground(new java.awt.Color(57, 62, 70));
 
@@ -123,106 +277,562 @@ public class AhorcadoInicio extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(19, 19, 19))
         );
 
-        jPanel3.setBackground(new java.awt.Color(57, 62, 70));
+        palabra_facil.setFont(new java.awt.Font("Avocado Cake", 0, 24)); // NOI18N
+        palabra_facil.setText("...");
 
-        jLabel7.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("a");
+        z_facil1.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        z_facil1.setText("Z");
+        z_facil1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                z_facil1ActionPerformed(evt);
+            }
+        });
 
-        jLabel8.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("c");
+        y_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        y_facil.setText("Y");
+        y_facil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                y_facilActionPerformed(evt);
+            }
+        });
 
-        jLabel9.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("f");
+        x_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        x_facil.setText("X");
+        x_facil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                x_facilActionPerformed(evt);
+            }
+        });
 
-        jLabel10.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("i");
+        w_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        w_facil.setText("W");
+        w_facil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                w_facilActionPerformed(evt);
+            }
+        });
 
-        jLabel11.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("l");
+        v_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        v_facil.setText("V");
+        v_facil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                v_facilActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        t_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        t_facil.setText("T");
+        t_facil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                t_facilActionPerformed(evt);
+            }
+        });
+
+        u_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        u_facil.setText("U");
+        u_facil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                u_facilActionPerformed(evt);
+            }
+        });
+
+        k_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        k_facil.setText("K");
+        k_facil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                k_facilActionPerformed(evt);
+            }
+        });
+
+        a_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        a_facil.setText("A");
+        a_facil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                a_facilActionPerformed(evt);
+            }
+        });
+
+        b_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        b_facil.setText("B");
+        b_facil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_facilActionPerformed(evt);
+            }
+        });
+
+        l_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        l_facil.setText("L");
+        l_facil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                l_facilActionPerformed(evt);
+            }
+        });
+
+        c_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        c_facil.setText("C");
+        c_facil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                c_facilActionPerformed(evt);
+            }
+        });
+
+        m_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        m_facil.setText("M");
+        m_facil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                m_facilActionPerformed(evt);
+            }
+        });
+
+        d_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        d_facil.setText("D");
+        d_facil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                d_facilActionPerformed(evt);
+            }
+        });
+
+        n_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        n_facil.setText("N");
+        n_facil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                n_facilActionPerformed(evt);
+            }
+        });
+
+        e_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        e_facil.setText("E");
+        e_facil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                e_facilActionPerformed(evt);
+            }
+        });
+
+        o_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        o_facil.setText("O");
+        o_facil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                o_facilActionPerformed(evt);
+            }
+        });
+
+        f_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        f_facil.setText("F");
+        f_facil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                f_facilActionPerformed(evt);
+            }
+        });
+
+        p_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        p_facil.setText("P");
+        p_facil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                p_facilActionPerformed(evt);
+            }
+        });
+
+        q_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        q_facil.setText("Q");
+        q_facil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                q_facilActionPerformed(evt);
+            }
+        });
+
+        h_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        h_facil.setText("H");
+        h_facil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                h_facilActionPerformed(evt);
+            }
+        });
+
+        i_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        i_facil.setText("I");
+        i_facil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                i_facilActionPerformed(evt);
+            }
+        });
+
+        r_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        r_facil.setText("R");
+        r_facil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                r_facilActionPerformed(evt);
+            }
+        });
+
+        j_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        j_facil.setText("J");
+        j_facil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j_facilActionPerformed(evt);
+            }
+        });
+
+        s_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        s_facil.setText("S");
+        s_facil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s_facilActionPerformed(evt);
+            }
+        });
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel7.setBackground(new java.awt.Color(204, 207, 217));
+
+        jPanel9.setBackground(new java.awt.Color(204, 207, 217));
+
+        jLabel17.setFont(new java.awt.Font("Avocado Cake", 0, 24)); // NOI18N
+        jLabel17.setText("adivina cual es");
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addComponent(jLabel17)
+                .addGap(0, 8, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel17)
+        );
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGap(0, 6, Short.MAX_VALUE)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jPanel8.setBackground(new java.awt.Color(146, 154, 171));
+
+        jLabel16.setFont(new java.awt.Font("Avocado Cake", 0, 24)); // NOI18N
+        jLabel16.setText("VIDA");
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addComponent(jLabel16)
+                .addGap(28, 28, 28))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel7))
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel11))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(19, 19, 19))
+                .addComponent(jLabel16)
+                .addContainerGap(246, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(189, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(183, 183, 183))
+        g_facil1.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
+        g_facil1.setText("g");
+        g_facil1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                g_facil1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout background_ahorcadoLayout = new javax.swing.GroupLayout(background_ahorcado);
+        background_ahorcado.setLayout(background_ahorcadoLayout);
+        background_ahorcadoLayout.setHorizontalGroup(
+            background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                        .addGap(200, 200, 200)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(a_facil)
+                            .addComponent(k_facil))
+                        .addGap(1, 1, 1)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                                .addGap(0, 0, Short.MAX_VALUE)
+                                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                                .addGap(10, 10, 10)
+                                                .addComponent(b_facil)
+                                                .addGap(11, 11, 11)
+                                                .addComponent(c_facil)
+                                                .addGap(21, 21, 21)
+                                                .addComponent(d_facil)
+                                                .addGap(21, 21, 21)
+                                                .addComponent(e_facil)
+                                                .addGap(21, 21, 21)
+                                                .addComponent(f_facil)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(g_facil1)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(h_facil)
+                                        .addGap(12, 12, 12)
+                                        .addComponent(i_facil)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(j_facil)
+                                        .addGap(24, 24, 24))
+                                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                                .addComponent(t_facil)
+                                                .addGap(21, 21, 21)
+                                                .addComponent(u_facil)
+                                                .addGap(21, 21, 21)
+                                                .addComponent(v_facil)
+                                                .addGap(11, 11, 11)
+                                                .addComponent(w_facil)
+                                                .addGap(21, 21, 21)
+                                                .addComponent(x_facil)
+                                                .addGap(21, 21, 21)
+                                                .addComponent(y_facil)
+                                                .addGap(11, 11, 11)
+                                                .addComponent(z_facil1))
+                                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                                .addGap(170, 170, 170)
+                                                .addComponent(palabra_facil))
+                                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                                .addGap(10, 10, 10)
+                                                .addComponent(l_facil)
+                                                .addGap(11, 11, 11)
+                                                .addComponent(m_facil)
+                                                .addGap(21, 21, 21)
+                                                .addComponent(n_facil)
+                                                .addGap(21, 21, 21)
+                                                .addComponent(o_facil)
+                                                .addGap(21, 21, 21)
+                                                .addComponent(p_facil)
+                                                .addGap(11, 11, 11)
+                                                .addComponent(q_facil)
+                                                .addGap(21, 21, 21)
+                                                .addComponent(r_facil)
+                                                .addGap(21, 21, 21)
+                                                .addComponent(s_facil)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(87, 87, 87)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+        background_ahorcadoLayout.setVerticalGroup(
+            background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(20, 20, 20)
+                .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(95, 95, 95))
+                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addComponent(a_facil)
+                        .addGap(11, 11, 11)
+                        .addComponent(k_facil))
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(palabra_facil)
+                                .addGap(32, 32, 32)
+                                .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(b_facil)
+                                    .addComponent(c_facil)
+                                    .addComponent(d_facil)
+                                    .addComponent(e_facil)
+                                    .addComponent(f_facil)
+                                    .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(i_facil)
+                                        .addComponent(j_facil)
+                                        .addComponent(h_facil)
+                                        .addComponent(g_facil1)))
+                                .addGap(11, 11, 11)
+                                .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(l_facil)
+                                    .addComponent(m_facil)
+                                    .addComponent(n_facil)
+                                    .addComponent(o_facil)
+                                    .addComponent(p_facil)
+                                    .addComponent(q_facil)
+                                    .addComponent(r_facil)
+                                    .addComponent(s_facil))
+                                .addGap(21, 21, 21)
+                                .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(t_facil)
+                                    .addComponent(u_facil)
+                                    .addComponent(v_facil)
+                                    .addComponent(w_facil)
+                                    .addComponent(x_facil)
+                                    .addComponent(y_facil)
+                                    .addComponent(z_facil1)))
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        background_ahorcado.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 740, 520));
-
-        getContentPane().add(background_ahorcado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 560));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(background_ahorcado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(background_ahorcado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void z_facil1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_z_facil1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_z_facil1ActionPerformed
+
+    private void y_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_y_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_y_facilActionPerformed
+
+    private void x_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_x_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_x_facilActionPerformed
+
+    private void w_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_w_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_w_facilActionPerformed
+
+    private void v_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_v_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_v_facilActionPerformed
+
+    private void u_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_u_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_u_facilActionPerformed
+
+    private void t_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_t_facilActionPerformed
+
+    private void s_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s_facilActionPerformed
+
+    private void r_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r_facilActionPerformed
+
+    private void q_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_q_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_q_facilActionPerformed
+
+    private void p_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_p_facilActionPerformed
+
+    private void o_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_o_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_o_facilActionPerformed
+
+    private void n_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_n_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_n_facilActionPerformed
+
+    private void m_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_m_facilActionPerformed
+
+    private void l_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_l_facilActionPerformed
+
+    private void k_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_k_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_k_facilActionPerformed
+
+    private void j_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_j_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_j_facilActionPerformed
+
+    private void i_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_i_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_i_facilActionPerformed
+
+    private void h_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_h_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_h_facilActionPerformed
+
+    private void f_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_f_facilActionPerformed
+
+    private void e_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_e_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_e_facilActionPerformed
+
+    private void d_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_d_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_d_facilActionPerformed
+
+    private void c_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_c_facilActionPerformed
+
+    private void b_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b_facilActionPerformed
+
+    private void a_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_a_facilActionPerformed
+
+    private void g_facil1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_g_facil1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_g_facil1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -260,10 +870,24 @@ public class AhorcadoInicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton a_facil;
+    private javax.swing.JButton b_facil;
     private javax.swing.JPanel background_ahorcado;
+    private javax.swing.JButton c_facil;
+    private javax.swing.JButton d_facil;
+    private javax.swing.JButton e_facil;
+    private javax.swing.JButton f_facil;
+    private javax.swing.JButton g_facil1;
+    private javax.swing.JButton h_facil;
+    private javax.swing.JButton i_facil;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -276,5 +900,29 @@ public class AhorcadoInicio extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel33;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JButton j_facil;
+    private javax.swing.JButton k_facil;
+    private javax.swing.JButton l_facil;
+    private javax.swing.JButton m_facil;
+    private javax.swing.JButton n_facil;
+    private javax.swing.JButton o_facil;
+    private javax.swing.JButton p_facil;
+    private javax.swing.JLabel palabra_facil;
+    private javax.swing.JButton q_facil;
+    private javax.swing.JButton r_facil;
+    private javax.swing.JButton s_facil;
+    private javax.swing.JButton t_facil;
+    private javax.swing.JButton u_facil;
+    private javax.swing.JButton v_facil;
+    private javax.swing.JButton w_facil;
+    private javax.swing.JButton x_facil;
+    private javax.swing.JButton y_facil;
+    private javax.swing.JButton z_facil1;
     // End of variables declaration//GEN-END:variables
 }
