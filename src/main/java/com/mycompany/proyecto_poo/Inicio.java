@@ -34,38 +34,48 @@ public class Inicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLBienvenido = new javax.swing.JLabel();
+        background_inicio = new javax.swing.JPanel();
         lblNombreUsuario = new javax.swing.JLabel();
         btnBuscaMinas = new javax.swing.JButton();
         btnAhorcado = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         btnVolver = new javax.swing.JButton();
+        jLBienvenido = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(242, 179, 63));
+        background_inicio.setBackground(new java.awt.Color(146, 154, 171));
+        background_inicio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLBienvenido.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLBienvenido.setText("Bienvenido");
-
-        lblNombreUsuario.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        lblNombreUsuario.setFont(new java.awt.Font("Lemon Juice", 1, 36)); // NOI18N
+        lblNombreUsuario.setForeground(new java.awt.Color(255, 255, 255));
         lblNombreUsuario.setText(".....");
+        background_inicio.add(lblNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 78, 118, -1));
 
-        btnBuscaMinas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnBuscaMinas.setFont(new java.awt.Font("Avocado Cake", 0, 14)); // NOI18N
         btnBuscaMinas.setText("Busca Minas");
+        background_inicio.add(btnBuscaMinas, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 216, 120, 30));
 
-        btnAhorcado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnAhorcado.setFont(new java.awt.Font("Avocado Cake", 0, 14)); // NOI18N
         btnAhorcado.setText("Ahorcado");
         btnAhorcado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAhorcadoActionPerformed(evt);
             }
         });
+        background_inicio.add(btnAhorcado, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 216, 100, 30));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setText("¿ Qué Deseas Jugar ?");
+        jLabel1.setFont(new java.awt.Font("Avocado Cake", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Qué Deseas Jugar ?");
+        background_inicio.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 148, -1, -1));
 
+        jPanel2.setBackground(new java.awt.Color(57, 62, 70));
+
+        btnVolver.setBackground(new java.awt.Color(146, 154, 171));
+        btnVolver.setFont(new java.awt.Font("Lemon Juice", 0, 24)); // NOI18N
+        btnVolver.setForeground(new java.awt.Color(255, 255, 255));
         btnVolver.setText("Volver");
         btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,60 +83,45 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(115, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnBuscaMinas)
-                        .addGap(67, 67, 67)
-                        .addComponent(btnAhorcado)
-                        .addGap(123, 123, 123))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLBienvenido)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(96, 96, 96))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(163, 163, 163)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        jLBienvenido.setFont(new java.awt.Font("Lemon Juice", 1, 36)); // NOI18N
+        jLBienvenido.setForeground(new java.awt.Color(255, 255, 255));
+        jLBienvenido.setText("BIENVENIDO");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(116, 116, 116)
+                        .addComponent(jLBienvenido))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addComponent(btnVolver)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(186, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(btnVolver)
-                .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLBienvenido)
-                    .addComponent(lblNombreUsuario))
-                .addGap(39, 39, 39)
-                .addComponent(jLabel1)
-                .addGap(43, 43, 43)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBuscaMinas)
-                    .addComponent(btnAhorcado))
-                .addContainerGap(162, Short.MAX_VALUE))
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLBienvenido)
+                .addContainerGap(227, Short.MAX_VALUE))
         );
+
+        background_inicio.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 21, 420, 330));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(background_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(background_inicio, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
         );
 
         pack();
@@ -182,12 +177,13 @@ public class Inicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel background_inicio;
     private javax.swing.JButton btnAhorcado;
     private javax.swing.JButton btnBuscaMinas;
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLBienvenido;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblNombreUsuario;
     // End of variables declaration//GEN-END:variables
 }
