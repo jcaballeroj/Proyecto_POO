@@ -59,7 +59,6 @@ public class AhorcadoInicio extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        palabra_facil = new javax.swing.JLabel();
         z_facil1 = new javax.swing.JButton();
         y_facil = new javax.swing.JButton();
         x_facil = new javax.swing.JButton();
@@ -88,7 +87,7 @@ public class AhorcadoInicio extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
+        palabra_facil = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         g_facil1 = new javax.swing.JButton();
@@ -165,23 +164,23 @@ public class AhorcadoInicio extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("a");
+        jLabel7.setText("°");
 
         jLabel8.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("c");
+        jLabel8.setText("°");
 
         jLabel9.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("f");
+        jLabel9.setText("°");
 
         jLabel10.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("i");
+        jLabel10.setText("°");
 
         jLabel11.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("l");
+        jLabel11.setText("°");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -192,10 +191,13 @@ public class AhorcadoInicio extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
                     .addComponent(jLabel9)
-                    .addComponent(jLabel10)
                     .addComponent(jLabel11)
-                    .addComponent(jLabel7))
-                .addContainerGap(13, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel10))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,16 +218,16 @@ public class AhorcadoInicio extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(204, 207, 217));
 
         jLabel14.setFont(new java.awt.Font("Avocado Cake", 0, 24)); // NOI18N
-        jLabel14.setText("tu palabra tiene tres letras");
+        jLabel14.setText("adivina la palabra");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(35, Short.MAX_VALUE)
                 .addComponent(jLabel14)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addGap(27, 27, 27))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,23 +241,23 @@ public class AhorcadoInicio extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("i");
+        jLabel2.setText("°");
 
         jLabel3.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("v");
+        jLabel3.setText("°");
 
         jLabel4.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("N");
+        jLabel4.setText("°");
 
         jLabel5.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("e");
+        jLabel5.setText("°");
 
         jLabel6.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("l");
+        jLabel6.setText("°");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -288,9 +290,6 @@ public class AhorcadoInicio extends javax.swing.JFrame {
                 .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(19, 19, 19))
         );
-
-        palabra_facil.setFont(new java.awt.Font("Avocado Cake", 0, 24)); // NOI18N
-        palabra_facil.setText("...");
 
         z_facil1.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
         z_facil1.setText("Z");
@@ -498,20 +497,23 @@ public class AhorcadoInicio extends javax.swing.JFrame {
 
         jPanel9.setBackground(new java.awt.Color(204, 207, 217));
 
-        jLabel17.setFont(new java.awt.Font("Avocado Cake", 0, 24)); // NOI18N
-        jLabel17.setText("adivina cual es");
+        palabra_facil.setFont(new java.awt.Font("Avocado Cake", 0, 24)); // NOI18N
+        palabra_facil.setText("...");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addComponent(jLabel17)
-                .addGap(0, 8, Short.MAX_VALUE))
+                .addGap(75, 75, 75)
+                .addComponent(palabra_facil)
+                .addContainerGap(88, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel17)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addComponent(palabra_facil)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -519,15 +521,15 @@ public class AhorcadoInicio extends javax.swing.JFrame {
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(13, Short.MAX_VALUE)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
+                .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 6, Short.MAX_VALUE))
         );
 
         jPanel8.setBackground(new java.awt.Color(146, 154, 171));
@@ -540,7 +542,7 @@ public class AhorcadoInicio extends javax.swing.JFrame {
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(36, Short.MAX_VALUE)
+                .addContainerGap(15, Short.MAX_VALUE)
                 .addComponent(jLabel16)
                 .addGap(28, 28, 28))
         );
@@ -565,127 +567,126 @@ public class AhorcadoInicio extends javax.swing.JFrame {
         background_ahorcadoLayout.setHorizontalGroup(
             background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                        .addGap(200, 200, 200)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
+                        .addGap(63, 63, 63)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                        .addGap(63, 63, 63)
+                                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                .addGap(45, 45, 45)
+                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, background_ahorcadoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                         .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(a_facil)
                             .addComponent(k_facil))
-                        .addGap(1, 1, 1)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11)
                         .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                .addComponent(t_facil)
+                                .addGap(21, 21, 21)
+                                .addComponent(u_facil)
+                                .addGap(21, 21, 21)
+                                .addComponent(v_facil)
+                                .addGap(11, 11, 11)
+                                .addComponent(w_facil)
+                                .addGap(21, 21, 21)
+                                .addComponent(x_facil)
+                                .addGap(21, 21, 21)
+                                .addComponent(y_facil)
+                                .addGap(11, 11, 11)
+                                .addComponent(z_facil1))
                             .addGroup(background_ahorcadoLayout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                                                .addGap(0, 0, Short.MAX_VALUE)
-                                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                                                .addGap(10, 10, 10)
-                                                .addComponent(b_facil)
-                                                .addGap(11, 11, 11)
-                                                .addComponent(c_facil)
-                                                .addGap(21, 21, 21)
-                                                .addComponent(d_facil)
-                                                .addGap(21, 21, 21)
-                                                .addComponent(e_facil)
-                                                .addGap(21, 21, 21)
-                                                .addComponent(f_facil)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(g_facil1)))
+                                        .addComponent(l_facil)
+                                        .addGap(11, 11, 11)
+                                        .addComponent(m_facil)
+                                        .addGap(21, 21, 21)
+                                        .addComponent(n_facil)
+                                        .addGap(21, 21, 21)
+                                        .addComponent(o_facil)
+                                        .addGap(21, 21, 21)
+                                        .addComponent(p_facil)
+                                        .addGap(11, 11, 11)
+                                        .addComponent(q_facil)
+                                        .addGap(21, 21, 21)
+                                        .addComponent(r_facil)
+                                        .addGap(21, 21, 21)
+                                        .addComponent(s_facil))
+                                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                        .addComponent(b_facil)
+                                        .addGap(11, 11, 11)
+                                        .addComponent(c_facil)
+                                        .addGap(21, 21, 21)
+                                        .addComponent(d_facil)
+                                        .addGap(21, 21, 21)
+                                        .addComponent(e_facil)
+                                        .addGap(21, 21, 21)
+                                        .addComponent(f_facil)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(g_facil1)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(h_facil)
                                         .addGap(12, 12, 12)
                                         .addComponent(i_facil)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(j_facil)
-                                        .addGap(24, 24, 24))
-                                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                                                .addComponent(t_facil)
-                                                .addGap(21, 21, 21)
-                                                .addComponent(u_facil)
-                                                .addGap(21, 21, 21)
-                                                .addComponent(v_facil)
-                                                .addGap(11, 11, 11)
-                                                .addComponent(w_facil)
-                                                .addGap(21, 21, 21)
-                                                .addComponent(x_facil)
-                                                .addGap(21, 21, 21)
-                                                .addComponent(y_facil)
-                                                .addGap(11, 11, 11)
-                                                .addComponent(z_facil1))
-                                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                                                .addGap(170, 170, 170)
-                                                .addComponent(palabra_facil))
-                                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                                                .addGap(10, 10, 10)
-                                                .addComponent(l_facil)
-                                                .addGap(11, 11, 11)
-                                                .addComponent(m_facil)
-                                                .addGap(21, 21, 21)
-                                                .addComponent(n_facil)
-                                                .addGap(21, 21, 21)
-                                                .addComponent(o_facil)
-                                                .addGap(21, 21, 21)
-                                                .addComponent(p_facil)
-                                                .addGap(11, 11, 11)
-                                                .addComponent(q_facil)
-                                                .addGap(21, 21, 21)
-                                                .addComponent(r_facil)
-                                                .addGap(21, 21, 21)
-                                                .addComponent(s_facil)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(87, 87, 87)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(36, Short.MAX_VALUE))
+                                        .addComponent(j_facil)))))
+                        .addGap(26, 26, 26)))
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         background_ahorcadoLayout.setVerticalGroup(
             background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(22, 22, 22)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
+                .addGap(18, 18, 18)
                 .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(a_facil)
-                        .addGap(11, 11, 11)
-                        .addComponent(k_facil))
-                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(27, Short.MAX_VALUE))
                     .addGroup(background_ahorcadoLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(background_ahorcadoLayout.createSequentialGroup()
                                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(20, 20, 20)
-                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(palabra_facil)
-                                .addGap(32, 32, 32)
+                                .addGap(18, 18, 18)
+                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                .addComponent(a_facil)
+                                .addGap(11, 11, 11)
+                                .addComponent(k_facil))
+                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
                                 .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(b_facil)
                                     .addComponent(c_facil)
                                     .addComponent(d_facil)
                                     .addComponent(e_facil)
-                                    .addComponent(f_facil)
                                     .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(f_facil)
                                         .addComponent(i_facil)
                                         .addComponent(j_facil)
                                         .addComponent(h_facil)
@@ -708,16 +709,17 @@ public class AhorcadoInicio extends javax.swing.JFrame {
                                     .addComponent(w_facil)
                                     .addComponent(x_facil)
                                     .addComponent(y_facil)
-                                    .addComponent(z_facil1)))
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(21, Short.MAX_VALUE))
+                                    .addComponent(z_facil1))))
+                        .addGap(57, 57, 57))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background_ahorcado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(background_ahorcado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -887,7 +889,6 @@ public class AhorcadoInicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
