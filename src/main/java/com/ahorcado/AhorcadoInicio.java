@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  * @author jcaba
  */
 public final class AhorcadoInicio extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form AhorcadoInicio
      */
@@ -24,12 +24,15 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
     public int err;
     public String res[];
     
+    private int puntaje = 100;
+    private int intentos = 0;
+
     public AhorcadoInicio() {
         initComponents();
         palabras = new String[3];
         btns = new JButton[27];
         botonFrase = new JButton();
-        
+
         //Palabras para adivinar
         palabras[0] = "libro".toUpperCase();
         palabras[1] = "perla".toUpperCase();
@@ -100,36 +103,36 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
     public void iniciar() {
         err = 0;
         jTextPane1.setText("");
-        //para generar una palabra aleatoriamente xD
+        //para generar una palabra aleatoriamente
         ran = (int) 0 + (int) (Math.random() * ((palabras.length - 1) + 1));
         //SEPARA EL MENSAJE POR PALABRAS
         String pal[] = palabras[ran].split(" ");
         res = new String[palabras[ran].length() + 1];
         int j = 0;
-        
+
         //Activa los botones cuando inicia el juego
         for (int i = 1; i < 27; i++) {
             btns[i].setEnabled(true);
         }
 
         if (palabras[ran].equals(palabras[0])) {
-                JOptionPane.showMessageDialog(null, "Tengo hojas sin ser árbol,\n"
-                        + "te hablo sin tener voz,\n"
-                        + "si me abres no me quejo,\n"
-                        + "adivina quién soy yo.\n"
-                        + "¿Qué soy?"
-                        + "¿Qué soy?");
-            } else if (palabras[ran].equals(palabras[1])) {
-                JOptionPane.showMessageDialog(null, "En el campo fui nacida,\n"
-                        + "mis hermanas son la flor,\n"
-                        + "los caballeros y damas\n"
-                        + "me llevan siempre de honor.\n"
-                        + "¿Qué soy?");
-            } else if (palabras[ran].equals(palabras[2])) {
-                JOptionPane.showMessageDialog(null, "Sin ser ave, vuela sin cesar,\n"
-                        + "sin ser pez, en el agua va.\n"
-                        + "¿Qué es?");
-            }
+            JOptionPane.showMessageDialog(null, "Tengo hojas sin ser árbol,"
+                    + "te hablo sin tener voz,\n"
+                    + "si me abres no me quejo,\n"
+                    + "adivina quién soy yo.\n"
+                    + "¿Qué soy?"
+                    + "¿Qué soy?");
+        } else if (palabras[ran].equals(palabras[1])) {
+            JOptionPane.showMessageDialog(null, "En el campo fui nacida,\n"
+                    + "mis hermanas son la flor,\n"
+                    + "los caballeros y damas\n"
+                    + "me llevan siempre de honor.\n"
+                    + "¿Qué soy?");
+        } else if (palabras[ran].equals(palabras[2])) {
+            JOptionPane.showMessageDialog(null, "Sin ser ave, vuela sin cesar,\n"
+                    + "sin ser pez, en el agua va.\n"
+                    + "¿Qué es?");
+        }
 
         // seran los guiones que van debajo de las letras como una separacion_
         for (String pal1 : pal) {
@@ -142,12 +145,12 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
         }
 
     }
+    int contador = 0;
 
     public void checarLetra(ActionEvent e) {
-        //String letra = e.getActionCommand();
-        //System.out.println("La letra del botón clickeado es: " + letra);
         JButton bt = (JButton) e.getSource();
         char c[];
+        intentos++;
         //busca la letra en la palabra despues de haber sido presionada
         for (int i = 1; i < 27; i++) {
             if (bt == btns[i]) {
@@ -182,12 +185,28 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
                     //al ser correcta se muestra un mensaje y se reinicia el juego
                     if (gano) {
                         JOptionPane.showMessageDialog(this, "Ganaste :3!!!");
+                        contador++;
+                        if (contador == 3) {
+                            int respuesta = JOptionPane.showConfirmDialog(null, "Desea continuar?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                            if (respuesta == JOptionPane.YES_OPTION) {
+                                System.out.println("Si");
+                            } else {
+                                System.out.println("No");
+                                menuAhorcado menu = new menuAhorcado();
+                                menu.setVisible(true);
+                                dispose();
+                                break;
+                                // Aquí puedes agregar código para manejar la opción "No", como salir del juego o reiniciar el contador
+                            }
+                        }
                         iniciar();
                         return;
                     }
+
                     //SI LA LETRA NO ESTA EN EL MENSAGE, SE INCREMENTA EL ERROR Y SE CAMBIA LA IMAGEN
                 } else {
                     err++;
+                    puntaje-=10;
                     //jButton1.setIcon(imgs[++err]);
                     //SI SE LLEGA A LOS 5 ERRORES ENTONCES SE PIERDE EL JUEGO Y SE MANDA EL MENSAGE DE:
                     if (err == 5) {
@@ -202,7 +221,6 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
             }
         }
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
