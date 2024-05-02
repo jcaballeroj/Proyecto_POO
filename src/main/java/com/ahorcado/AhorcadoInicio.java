@@ -23,13 +23,13 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
     public int ran;
     public int err;
     public String res[];
-
+    
     public AhorcadoInicio() {
         initComponents();
         palabras = new String[3];
         btns = new JButton[27];
         botonFrase = new JButton();
-
+        
         //Palabras para adivinar
         palabras[0] = "libro".toUpperCase();
         palabras[1] = "perla".toUpperCase();
@@ -686,7 +686,7 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel16)
-                .addContainerGap(246, Short.MAX_VALUE))
+                .addContainerGap(254, Short.MAX_VALUE))
         );
 
         g_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
