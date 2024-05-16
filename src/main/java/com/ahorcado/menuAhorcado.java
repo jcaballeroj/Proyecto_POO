@@ -27,30 +27,80 @@ public class menuAhorcado extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        btnPrimerNivel = new javax.swing.JButton();
+        btnSegundoNivel = new javax.swing.JButton();
+        btnCuartoNivel = new javax.swing.JButton();
+        btnTercerNivel = new javax.swing.JButton();
+        btnQuintoNivel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Menu Ahorcado");
+
+        btnPrimerNivel.setText("Primer Nivel");
+        btnPrimerNivel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrimerNivelActionPerformed(evt);
+            }
+        });
+
+        btnSegundoNivel.setText("Segudo Nivel");
+
+        btnCuartoNivel.setText("Cuarto Nivel");
+
+        btnTercerNivel.setText("Tercer Nivel");
+
+        btnQuintoNivel.setText("Quinto Nivel");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(154, 154, 154)
-                .addComponent(jLabel1)
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(btnCuartoNivel)
+                        .addGap(40, 40, 40)
+                        .addComponent(btnQuintoNivel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(btnPrimerNivel)
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnSegundoNivel)
+                                .addGap(28, 28, 28)
+                                .addComponent(btnTercerNivel))
+                            .addComponent(jLabel1))))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jLabel1)
-                .addContainerGap(262, Short.MAX_VALUE))
+                .addGap(79, 79, 79)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnPrimerNivel)
+                    .addComponent(btnSegundoNivel)
+                    .addComponent(btnTercerNivel))
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCuartoNivel)
+                    .addComponent(btnQuintoNivel))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnPrimerNivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrimerNivelActionPerformed
+        AhorcadoInicio jAhorcado1 = new AhorcadoInicio();
+        jAhorcado1.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnPrimerNivelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -88,6 +138,11 @@ public class menuAhorcado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCuartoNivel;
+    private javax.swing.JButton btnPrimerNivel;
+    private javax.swing.JButton btnQuintoNivel;
+    private javax.swing.JButton btnSegundoNivel;
+    private javax.swing.JButton btnTercerNivel;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,6 +5,7 @@
 package com.mycompany.proyecto_poo;
 
 import com.ahorcado.AhorcadoInicio;
+import com.ahorcado.menuAhorcado;
 /**
  *
  * @author jcaba
@@ -129,8 +130,8 @@ public class Inicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAhorcadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAhorcadoActionPerformed
-        AhorcadoInicio jAhorcado = new AhorcadoInicio();
-        jAhorcado.setVisible(true);
+        menuAhorcado jMenuAhorcado = new menuAhorcado();
+        jMenuAhorcado.setVisible(true);
         dispose();
         
     }//GEN-LAST:event_btnAhorcadoActionPerformed

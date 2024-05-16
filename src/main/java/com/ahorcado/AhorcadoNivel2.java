@@ -4,227 +4,19 @@
  */
 package com.ahorcado;
 
-import java.awt.event.ActionEvent;
-
-import javax.swing.JButton;
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author jcaba
  */
-public final class AhorcadoInicio extends javax.swing.JFrame {
-    
+public class AhorcadoNivel2 extends javax.swing.JFrame {
+
     /**
-     * Creates new form AhorcadoInicio
+     * Creates new form AhorcadoNivel2
      */
-    public JButton btns[], botonFrase;
-    public String palabras[];
-    public int ran;
-    public int err;
-    public String res[];
-    
-    private int puntaje = 100;
-    private int intentos = 0;
-
-    public AhorcadoInicio() {
+    public AhorcadoNivel2() {
         initComponents();
-        palabras = new String[3];
-        btns = new JButton[27];
-        botonFrase = new JButton();
-
-        //Palabras para adivinar
-        palabras[0] = "libro".toUpperCase();
-        palabras[1] = "perla".toUpperCase();
-        palabras[2] = "viento".toUpperCase();
-
-        //Botones para las letras
-        btns[1] = a_facil;
-        btns[2] = b_facil;
-        btns[3] = c_facil;
-        btns[4] = d_facil;
-        btns[5] = e_facil;
-        btns[6] = f_facil;
-        btns[7] = g_facil;
-        btns[8] = h_facil;
-        btns[9] = i_facil;
-        btns[10] = j_facil;
-        btns[11] = k_facil;
-        btns[12] = l_facil;
-        btns[13] = m_facil;
-        btns[14] = n_facil;
-        btns[15] = o_facil;
-        btns[16] = p_facil;
-        btns[17] = q_facil;
-        btns[18] = r_facil;
-        btns[19] = s_facil;
-        btns[20] = t_facil;
-        btns[21] = u_facil;
-        btns[22] = v_facil;
-        btns[23] = w_facil;
-        btns[24] = x_facil;
-        btns[25] = y_facil;
-        btns[26] = z_facil;
-
-        botonFrase = btnFrase;
-
-        for (int i = 1; i < 27; i++) {
-            btns[i].addActionListener((ActionEvent e) -> {
-                checarLetra(e);
-            });
-        }
-
-        //mostrando la frase que salio aleatorio para advinidar la palabra
-        botonFrase.addActionListener((ActionEvent e) -> {
-            // Aquí muestras la frase correspondiente a la palabra que se está adivinando
-            if (palabras[ran].equals(palabras[0])) {
-                JOptionPane.showMessageDialog(null, "Tengo hojas sin ser árbol,\n"
-                        + "te hablo sin tener voz,\n"
-                        + "si me abres no me quejo,\n"
-                        + "adivina quién soy yo.\n"
-                        + "¿Qué soy?"
-                        + "¿Qué soy?");
-            } else if (palabras[ran].equals(palabras[1])) {
-                JOptionPane.showMessageDialog(null, "En el campo fui nacida,\n"
-                        + "mis hermanas son la flor,\n"
-                        + "los caballeros y damas\n"
-                        + "me llevan siempre de honor.\n"
-                        + "¿Qué soy?");
-            } else if (palabras[ran].equals(palabras[2])) {
-                JOptionPane.showMessageDialog(null, "Sin ser ave, vuela sin cesar,\n"
-                        + "sin ser pez, en el agua va.\n"
-                        + "¿Qué es?");
-            }
-        });
-        iniciar();
-
     }
 
-    public void iniciar() {
-        err = 0;
-        jTextPane1.setText("");
-        //para generar una palabra aleatoriamente
-        ran = (int) 0 + (int) (Math.random() * ((palabras.length - 1) + 1));
-        //SEPARA EL MENSAJE POR PALABRAS
-        String pal[] = palabras[ran].split(" ");
-        res = new String[palabras[ran].length() + 1];
-        int j = 0;
-
-        //Activa los botones cuando inicia el juego
-        for (int i = 1; i < 27; i++) {
-            btns[i].setEnabled(true);
-        }
-
-        if (palabras[ran].equals(palabras[0])) {
-            JOptionPane.showMessageDialog(null, "Tengo hojas sin ser árbol,"
-                    + "te hablo sin tener voz,\n"
-                    + "si me abres no me quejo,\n"
-                    + "adivina quién soy yo.\n"
-                    + "¿Qué soy?"
-                    + "¿Qué soy?");
-        } else if (palabras[ran].equals(palabras[1])) {
-            JOptionPane.showMessageDialog(null, "En el campo fui nacida,\n"
-                    + "mis hermanas son la flor,\n"
-                    + "los caballeros y damas\n"
-                    + "me llevan siempre de honor.\n"
-                    + "¿Qué soy?");
-        } else if (palabras[ran].equals(palabras[2])) {
-            JOptionPane.showMessageDialog(null, "Sin ser ave, vuela sin cesar,\n"
-                    + "sin ser pez, en el agua va.\n"
-                    + "¿Qué es?");
-        }
-
-        // seran los guiones que van debajo de las letras como una separacion_
-        for (String pal1 : pal) {
-            for (int i = 0; i < pal1.length(); i++) {
-                jTextPane1.setText(jTextPane1.getText() + "_ ");
-                res[j++] = "_";
-            }
-            jTextPane1.setText(jTextPane1.getText());
-            res[j++] = " ";
-        }
-
-    }
-    int contador = 0;
-
-    public void checarLetra(ActionEvent e) {
-        JButton bt = (JButton) e.getSource();
-        char c[];
-        intentos++;
-        //busca la letra en la palabra despues de haber sido presionada
-        for (int i = 1; i < 27; i++) {
-            if (bt == btns[i]) {
-                //la tecla es inicializada
-                c = Character.toChars(64 + i);
-                //busca si la letra esta en la frase
-                boolean esta = false;
-                for (int j = 0; j < palabras[ran].length(); j++) {
-                    if (c[0] == palabras[ran].charAt(j)) {
-                        res[j] = c[0] + "";
-                        esta = true;
-                    }
-                }
-                //SI LA LETRA ESTA EN EL MENSAJE SE MUESTRA EN EL TEXTPANEL
-                if (esta) {
-                    jTextPane1.setText("");
-                    for (String re : res) {
-                        if (" ".equals(re)) {
-                            jTextPane1.setText(jTextPane1.getText());
-                        } else {
-                            jTextPane1.setText(jTextPane1.getText() + re + " ");
-                        }
-                    }
-                    //hace una comprobacion de las letras restantes y faltantes, en caso de que ya no haya letras sera ganador :D
-                    boolean gano = true;
-                    for (String re : res) {
-                        if (re.equals("_")) {
-                            gano = false;
-                            break;
-                        }
-                    }
-                    //al ser correcta se muestra un mensaje y se reinicia el juego
-                    if (gano) {
-                        JOptionPane.showMessageDialog(this, "Ganaste :3!!!");
-                        contador++;
-                        if (contador == 2) {
-                            int respuesta = JOptionPane.showConfirmDialog(null, "Desea continuar?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-                            if (respuesta == JOptionPane.YES_OPTION) {
-                                System.out.println("Si");
-                                //Llamando al segundo nivel
-                                AhorcadoNivel2 jNivel2 = new AhorcadoNivel2();
-                                jNivel2.setVisible(true);
-                                dispose();
-                                break;
-                            } else {
-                                System.out.println("No");
-                                menuAhorcado menu = new menuAhorcado();
-                                menu.setVisible(true);
-                                dispose();
-                                break;
-                            }
-                        }
-                        iniciar();
-                        return;
-                    }
-
-                    //SI LA LETRA NO ESTA EN EL MENSAGE, SE INCREMENTA EL ERROR Y SE CAMBIA LA IMAGEN
-                } else {
-                    err++;
-                    puntaje-=10;
-                    //jButton1.setIcon(imgs[++err]);
-                    //SI SE LLEGA A LOS 5 ERRORES ENTONCES SE PIERDE EL JUEGO Y SE MANDA EL MENSAGE DE:
-                    if (err == 5) {
-                        JOptionPane.showMessageDialog(this, "Intenta con otra palabra la respuesta es: \n" + palabras[ran]);
-                        iniciar();
-                        return;
-                    }
-                }
-                //esta es la linea que desactiva las letras despues de ser usadas :3
-                bt.setEnabled(false);
-                break;
-            }
-        }
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -234,11 +26,6 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel33 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
         background_ahorcado = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -288,68 +75,11 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
         jTextPane1 = new javax.swing.JTextPane();
         btnFrase = new javax.swing.JButton();
 
-        jPanel33.setBackground(new java.awt.Color(190, 7, 55));
-
-        javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
-        jPanel33.setLayout(jPanel33Layout);
-        jPanel33Layout.setHorizontalGroup(
-            jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 20, Short.MAX_VALUE)
-        );
-        jPanel33Layout.setVerticalGroup(
-            jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 20, Short.MAX_VALUE)
-        );
-
-        jPanel4.setBackground(new java.awt.Color(146, 154, 171));
-
-        jLabel13.setFont(new java.awt.Font("Lemon Juice", 1, 36)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(57, 62, 70));
-        jLabel13.setText("VIDAS");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addComponent(jLabel13)
-                .addGap(15, 15, 15))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel13)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel6.setBackground(new java.awt.Color(204, 207, 217));
-
-        jLabel15.setFont(new java.awt.Font("Avocado Cake", 0, 24)); // NOI18N
-        jLabel15.setText("adivina cuál es");
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel15)
-                .addGap(22, 22, 22))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel15)
-                .addContainerGap())
-        );
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         background_ahorcado.setBackground(new java.awt.Color(255, 255, 255));
         background_ahorcado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(57, 62, 70), 15));
+        background_ahorcado.setPreferredSize(new java.awt.Dimension(806, 462));
 
         jLabel1.setFont(new java.awt.Font("BubbleGum", 0, 72)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(56, 62, 70));
@@ -749,7 +479,7 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
                                 .addComponent(btnFrase)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, background_ahorcadoLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(a_facil)
                             .addComponent(k_facil))
@@ -810,7 +540,7 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         background_ahorcadoLayout.setVerticalGroup(
             background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -824,7 +554,7 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
                             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(27, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(background_ahorcadoLayout.createSequentialGroup()
                         .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(background_ahorcadoLayout.createSequentialGroup()
@@ -882,13 +612,15 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(background_ahorcado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(background_ahorcado, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(background_ahorcado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(background_ahorcado, javax.swing.GroupLayout.DEFAULT_SIZE, 441, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -916,85 +648,85 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_v_facilActionPerformed
 
-    private void u_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_u_facilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_u_facilActionPerformed
-
     private void t_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t_facilActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_t_facilActionPerformed
 
-    private void s_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s_facilActionPerformed
+    private void u_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_u_facilActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_s_facilActionPerformed
-
-    private void r_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_facilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_r_facilActionPerformed
-
-    private void q_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_q_facilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_q_facilActionPerformed
-
-    private void p_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p_facilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_p_facilActionPerformed
-
-    private void o_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_o_facilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_o_facilActionPerformed
-
-    private void n_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_n_facilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_n_facilActionPerformed
-
-    private void m_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_facilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_m_facilActionPerformed
-
-    private void l_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l_facilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_l_facilActionPerformed
+    }//GEN-LAST:event_u_facilActionPerformed
 
     private void k_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_k_facilActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_k_facilActionPerformed
 
-    private void j_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_j_facilActionPerformed
+    private void a_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a_facilActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_j_facilActionPerformed
-
-    private void i_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_i_facilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_i_facilActionPerformed
-
-    private void h_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_h_facilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_h_facilActionPerformed
-
-    private void f_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f_facilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_f_facilActionPerformed
-
-    private void e_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_e_facilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_e_facilActionPerformed
-
-    private void d_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_d_facilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_d_facilActionPerformed
-
-    private void c_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_facilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_c_facilActionPerformed
+    }//GEN-LAST:event_a_facilActionPerformed
 
     private void b_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_facilActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_b_facilActionPerformed
 
-    private void a_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a_facilActionPerformed
+    private void l_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l_facilActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_a_facilActionPerformed
+    }//GEN-LAST:event_l_facilActionPerformed
+
+    private void c_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_c_facilActionPerformed
+
+    private void m_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_m_facilActionPerformed
+
+    private void d_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_d_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_d_facilActionPerformed
+
+    private void n_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_n_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_n_facilActionPerformed
+
+    private void e_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_e_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_e_facilActionPerformed
+
+    private void o_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_o_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_o_facilActionPerformed
+
+    private void f_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_f_facilActionPerformed
+
+    private void p_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_p_facilActionPerformed
+
+    private void q_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_q_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_q_facilActionPerformed
+
+    private void h_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_h_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_h_facilActionPerformed
+
+    private void i_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_i_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_i_facilActionPerformed
+
+    private void r_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r_facilActionPerformed
+
+    private void j_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_j_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_j_facilActionPerformed
+
+    private void s_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s_facilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s_facilActionPerformed
 
     private void g_facilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_g_facilActionPerformed
         // TODO add your handling code here:
@@ -1017,20 +749,20 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AhorcadoInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AhorcadoNivel2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AhorcadoInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AhorcadoNivel2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AhorcadoInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AhorcadoNivel2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AhorcadoInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AhorcadoNivel2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AhorcadoInicio().setVisible(true);
+                new AhorcadoNivel2().setVisible(true);
             }
         });
     }
@@ -1050,9 +782,7 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -1065,10 +795,7 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel33;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextPane jTextPane1;
