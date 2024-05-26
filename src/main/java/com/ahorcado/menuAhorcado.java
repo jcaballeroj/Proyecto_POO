@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.ahorcado;
-
+import com.mycompany.proyecto_poo.Inicio;
 /**
  *
  * @author jcaba
@@ -26,16 +26,155 @@ public class menuAhorcado extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        background_ahorcado = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        btnVolver = new javax.swing.JButton();
         btnPrimerNivel = new javax.swing.JButton();
-        btnSegundoNivel = new javax.swing.JButton();
         btnCuartoNivel = new javax.swing.JButton();
-        btnTercerNivel = new javax.swing.JButton();
+        btnSegundoNivel = new javax.swing.JButton();
         btnQuintoNivel = new javax.swing.JButton();
+        btnTercerNivel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Menu Ahorcado");
+        background_ahorcado.setBackground(new java.awt.Color(255, 255, 255));
+        background_ahorcado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(57, 62, 70), 15));
+
+        jLabel1.setFont(new java.awt.Font("BubbleGum", 0, 72)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(56, 62, 70));
+        jLabel1.setText("MENU AHORCADO");
+
+        jPanel3.setBackground(new java.awt.Color(57, 62, 70));
+        jPanel3.setPreferredSize(new java.awt.Dimension(347, 270));
+
+        jLabel7.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("°");
+
+        jLabel8.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("°");
+
+        jLabel9.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("°");
+
+        jLabel10.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("°");
+
+        jLabel11.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("°");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel11)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel10))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(19, 19, 19))
+        );
+
+        jPanel2.setBackground(new java.awt.Color(57, 62, 70));
+
+        jLabel2.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("°");
+
+        jLabel3.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("°");
+
+        jLabel4.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("°");
+
+        jLabel5.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("°");
+
+        jLabel6.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("°");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel2))
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(19, 19, 19))
+        );
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnVolver.setText("Volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
 
         btnPrimerNivel.setText("Primer Nivel");
         btnPrimerNivel.addActionListener(new java.awt.event.ActionListener() {
@@ -44,63 +183,153 @@ public class menuAhorcado extends javax.swing.JFrame {
             }
         });
 
-        btnSegundoNivel.setText("Segudo Nivel");
-
         btnCuartoNivel.setText("Cuarto Nivel");
+        btnCuartoNivel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCuartoNivelActionPerformed(evt);
+            }
+        });
 
-        btnTercerNivel.setText("Tercer Nivel");
+        btnSegundoNivel.setText("Segudo Nivel");
+        btnSegundoNivel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSegundoNivelActionPerformed(evt);
+            }
+        });
 
         btnQuintoNivel.setText("Quinto Nivel");
+        btnQuintoNivel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQuintoNivelActionPerformed(evt);
+            }
+        });
+
+        btnTercerNivel.setText("Tercer Nivel");
+        btnTercerNivel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTercerNivelActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout background_ahorcadoLayout = new javax.swing.GroupLayout(background_ahorcado);
+        background_ahorcado.setLayout(background_ahorcadoLayout);
+        background_ahorcadoLayout.setHorizontalGroup(
+            background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(78, 78, 78)
+                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                .addGap(54, 54, 54)
+                                .addComponent(btnCuartoNivel)
+                                .addGap(40, 40, 40)
+                                .addComponent(btnQuintoNivel))
+                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                .addComponent(btnPrimerNivel)
+                                .addGap(33, 33, 33)
+                                .addComponent(btnSegundoNivel)
+                                .addGap(28, 28, 28)
+                                .addComponent(btnTercerNivel))))
+                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                .addGap(63, 63, 63)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(btnVolver)))
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(69, Short.MAX_VALUE))
+        );
+        background_ahorcadoLayout.setVerticalGroup(
+            background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnVolver)))
+                .addGap(18, 18, 18)
+                .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(78, 78, 78)
+                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnPrimerNivel)
+                            .addComponent(btnSegundoNivel)
+                            .addComponent(btnTercerNivel))
+                        .addGap(35, 35, 35)
+                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnCuartoNivel)
+                            .addComponent(btnQuintoNivel)))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(btnCuartoNivel)
-                        .addGap(40, 40, 40)
-                        .addComponent(btnQuintoNivel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(btnPrimerNivel)
-                        .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnSegundoNivel)
-                                .addGap(28, 28, 28)
-                                .addComponent(btnTercerNivel))
-                            .addComponent(jLabel1))))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addComponent(background_ahorcado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel1)
-                .addGap(79, 79, 79)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnPrimerNivel)
-                    .addComponent(btnSegundoNivel)
-                    .addComponent(btnTercerNivel))
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCuartoNivel)
-                    .addComponent(btnQuintoNivel))
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addComponent(background_ahorcado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        Inicio jInicio = new Inicio();
+        jInicio.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnVolverActionPerformed
+
     private void btnPrimerNivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrimerNivelActionPerformed
         AhorcadoInicio jAhorcado1 = new AhorcadoInicio();
         jAhorcado1.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnPrimerNivelActionPerformed
+
+    private void btnCuartoNivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCuartoNivelActionPerformed
+        AhorcadoNivel4 jAhorcado4 = new AhorcadoNivel4();
+        jAhorcado4.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnCuartoNivelActionPerformed
+
+    private void btnSegundoNivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSegundoNivelActionPerformed
+        AhorcadoNivel2 jAhorcado2 = new AhorcadoNivel2();
+        jAhorcado2.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnSegundoNivelActionPerformed
+
+    private void btnQuintoNivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuintoNivelActionPerformed
+        AhorcadoNivel5 jAhorcado5 = new AhorcadoNivel5();
+        jAhorcado5.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnQuintoNivelActionPerformed
+
+    private void btnTercerNivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTercerNivelActionPerformed
+        AhorcadoNivel3 jAhorcado3 = new AhorcadoNivel3();
+        jAhorcado3.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnTercerNivelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,11 +367,26 @@ public class menuAhorcado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel background_ahorcado;
     private javax.swing.JButton btnCuartoNivel;
     private javax.swing.JButton btnPrimerNivel;
     private javax.swing.JButton btnQuintoNivel;
     private javax.swing.JButton btnSegundoNivel;
     private javax.swing.JButton btnTercerNivel;
+    private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }
