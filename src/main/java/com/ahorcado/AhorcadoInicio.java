@@ -22,7 +22,6 @@ import java.awt.*;
  *
  * @author jcaba
  */
-
 public final class AhorcadoInicio extends javax.swing.JFrame {
 
     /**
@@ -202,14 +201,12 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
                         if (contador == 2) {
                             int respuesta = JOptionPane.showConfirmDialog(null, "Desea continuar?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                             if (respuesta == JOptionPane.YES_OPTION) {
-                                System.out.println("Si");
                                 //Llamando al segundo nivel
                                 AhorcadoNivel2 jNivel2 = new AhorcadoNivel2();
                                 jNivel2.setVisible(true);
                                 dispose();
                                 break;
                             } else {
-                                System.out.println("No");
                                 menuAhorcado menu = new menuAhorcado();
                                 menu.setVisible(true);
                                 dispose();
@@ -223,47 +220,41 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
                     //SI LA LETRA NO ESTA EN EL MENSAGE, SE INCREMENTA EL ERROR Y SE CAMBIA LA IMAGEN
                 } else {
                     err++;
-                    puntaje -= 3;
+                    puntaje-=4;
                     lblPuntaje.setText("Puntaje= "+puntaje);
                     //jButton1.setIcon(imgs[++err]);
                     //SI SE LLEGA A LOS 5 ERRORES ENTONCES SE PIERDE EL JUEGO Y SE MANDA EL MENSAGE DE:
-                    if (err == 5) {
+                    if (err == 8) {
                         JOptionPane.showMessageDialog(this, "Intenta con otra palabra la respuesta es: \n" + palabras[ran]);
-                        grafica();
-                        //iniciar();
+                        iniciar();
                         return;
                     }
-                    iniciar();
-                    
                 }
-                
                 //esta es la linea que desactiva las letras despues de ser usadas :3
                 bt.setEnabled(false);
                 break;
             }
         }
-        
-      
     }
 
-    
-      public void grafica(){
+    public void grafica() {
         DefaultCategoryDataset datos = new DefaultCategoryDataset();
-        
+
         datos.setValue(puntaje, "Puntaje", "");
         datos.setValue(intentos, "Intentos", "");
         JFreeChart grafico_barras = ChartFactory.createBarChart3D("Calificacion", "a", "b", datos);
-        
+
         ChartPanel panel = new ChartPanel(grafico_barras);
         panel.setMouseWheelEnabled(true);
-        panel.setPreferredSize(new Dimension(170,100));
-        
+        panel.setPreferredSize(new Dimension(170, 100));
+
         panelNivel1.setLayout(new BorderLayout());
-        panelNivel1.add(panel,BorderLayout.NORTH);
-        
+        panelNivel1.add(panel, BorderLayout.NORTH);
+
         pack();
         repaint();
-      }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -807,7 +798,7 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
                     .addGroup(background_ahorcadoLayout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(a_facil)
                             .addComponent(k_facil))
@@ -875,9 +866,6 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
                                 .addComponent(btnVolver)))
                         .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
                                 .addGap(45, 45, 45)
                                 .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jScrollPane1)
@@ -887,8 +875,11 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(panelNivel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnGrafico))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)))
+                                    .addComponent(btnGrafico)))
+                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)))
                 .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(background_ahorcadoLayout.createSequentialGroup()
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -899,7 +890,7 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
                         .addGroup(background_ahorcadoLayout.createSequentialGroup()
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblPuntaje))))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         background_ahorcadoLayout.setVerticalGroup(
             background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -923,7 +914,7 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
                             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(27, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(background_ahorcadoLayout.createSequentialGroup()
                         .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(background_ahorcadoLayout.createSequentialGroup()
@@ -942,7 +933,7 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
                                 .addComponent(btnGrafico)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(panelNivel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                         .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(background_ahorcadoLayout.createSequentialGroup()
                                 .addComponent(a_facil)
@@ -986,15 +977,11 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(background_ahorcado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(background_ahorcado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(background_ahorcado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(background_ahorcado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -1134,36 +1121,36 @@ public final class AhorcadoInicio extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-    /* Set the Nimbus look and feel */
-    //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-    /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-     */
-    try {
-        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-            if ("Nimbus".equals(info.getName())) {
-                javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                break;
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
             }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(AhorcadoInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(AhorcadoInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(AhorcadoInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(AhorcadoInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-    } catch (ClassNotFoundException ex) {
-        java.util.logging.Logger.getLogger(AhorcadoInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    } catch (InstantiationException ex) {
-        java.util.logging.Logger.getLogger(AhorcadoInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    } catch (IllegalAccessException ex) {
-        java.util.logging.Logger.getLogger(AhorcadoInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-        java.util.logging.Logger.getLogger(AhorcadoInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    }
-    //</editor-fold>
+        //</editor-fold>
 
-    /* Create and display the form */
-    java.awt.EventQueue.invokeLater(new Runnable() {
-        public void run() {
-            new AhorcadoInicio().setVisible(true);
-        }
-    });
-}
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new AhorcadoInicio().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton a_facil;

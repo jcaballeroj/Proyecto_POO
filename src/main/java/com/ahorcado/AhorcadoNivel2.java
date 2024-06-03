@@ -27,7 +27,7 @@ public final class AhorcadoNivel2 extends javax.swing.JFrame {
     private int intentos = 0;
     public AhorcadoNivel2() {
         initComponents();
-        palabras = new String[4];
+        palabras = new String[5];
         btns = new JButton[27];
         botonFrase = new JButton();
 
@@ -36,7 +36,7 @@ public final class AhorcadoNivel2 extends javax.swing.JFrame {
         palabras[1] = "caracol".toUpperCase();
         palabras[2] = "huevo".toUpperCase();
         palabras[3] = "reloj".toUpperCase();
-
+        palabras[4] = "calle".toUpperCase();
 
         //Botones para las letras
         btns[1] = a_facil;
@@ -84,8 +84,9 @@ public final class AhorcadoNivel2 extends javax.swing.JFrame {
             } else if (palabras[ran].equals(palabras[2])) {
                 JOptionPane.showMessageDialog(null, "Es blanco como la sal. Fácil de abrir, pero no lo puedes cerrar");
             }else if (palabras[ran].equals(palabras[3])) {
-                JOptionPane.showMessageDialog(null, "¿Cuál es aquel pobrecito, siempre andando, siempre andando, y no sale de su sitio?");
-                
+                JOptionPane.showMessageDialog(null, "¿Cuál es aquel pobrecito, siempre andando, siempre andando, y no sale de su sitio?");   
+            }else if (palabras[ran].equals(palabras[4])) {
+                JOptionPane.showMessageDialog(null, "Todos pasan por mí, yo nunca paso por nadie. Todos preguntan por mí, yo no pregunto por nadie");   
             }
         });
         iniciar();
@@ -679,23 +680,8 @@ public final class AhorcadoNivel2 extends javax.swing.JFrame {
                 .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(background_ahorcadoLayout.createSequentialGroup()
                         .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                                .addGap(58, 58, 58)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                                        .addGap(20, 20, 20)
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                                        .addGap(45, 45, 45)
-                                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jScrollPane1)
-                                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnFrase)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, background_ahorcadoLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                                 .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(a_facil)
                                     .addComponent(k_facil))
@@ -735,30 +721,46 @@ public final class AhorcadoNivel2 extends javax.swing.JFrame {
                                                 .addGap(21, 21, 21)
                                                 .addComponent(s_facil))
                                             .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                                                .addComponent(b_facil)
-                                                .addGap(11, 11, 11)
-                                                .addComponent(c_facil)
-                                                .addGap(21, 21, 21)
-                                                .addComponent(d_facil)
-                                                .addGap(21, 21, 21)
-                                                .addComponent(e_facil)
-                                                .addGap(21, 21, 21)
-                                                .addComponent(f_facil)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(g_facil)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(h_facil)
+                                                .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, background_ahorcadoLayout.createSequentialGroup()
+                                                        .addComponent(b_facil)
+                                                        .addGap(11, 11, 11)
+                                                        .addComponent(c_facil)
+                                                        .addGap(21, 21, 21)
+                                                        .addComponent(d_facil)
+                                                        .addGap(21, 21, 21)
+                                                        .addComponent(e_facil)
+                                                        .addGap(21, 21, 21)
+                                                        .addComponent(f_facil)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(g_facil)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(h_facil)))
                                                 .addGap(12, 12, 12)
                                                 .addComponent(i_facil)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(j_facil)))))
-                                .addGap(26, 26, 26)))
+                                .addGap(26, 26, 26))
+                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                        .addGap(58, 58, 58)
+                                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(45, 45, 45)
+                                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btnFrase))
+                                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(background_ahorcadoLayout.createSequentialGroup()
                                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(21, 21, 21)
                                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addContainerGap(15, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, background_ahorcadoLayout.createSequentialGroup()
                                 .addComponent(lblIntentos)
                                 .addGap(44, 44, 44))))
@@ -786,7 +788,7 @@ public final class AhorcadoNivel2 extends javax.swing.JFrame {
                             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(27, Short.MAX_VALUE))
                     .addGroup(background_ahorcadoLayout.createSequentialGroup()
                         .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(background_ahorcadoLayout.createSequentialGroup()
@@ -843,17 +845,11 @@ public final class AhorcadoNivel2 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(background_ahorcado, javax.swing.GroupLayout.DEFAULT_SIZE, 745, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(background_ahorcado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(background_ahorcado, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(background_ahorcado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
         );
 
         pack();
