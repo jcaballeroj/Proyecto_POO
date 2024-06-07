@@ -45,19 +45,18 @@ public class menuAhorcado extends javax.swing.JFrame {
         btnPrimerNivel = new javax.swing.JButton();
         btnCuartoNivel = new javax.swing.JButton();
         btnSegundoNivel = new javax.swing.JButton();
-        btnQuintoNivel = new javax.swing.JButton();
         btnTercerNivel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         background_ahorcado.setBackground(new java.awt.Color(255, 255, 255));
-        background_ahorcado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(57, 62, 70), 15));
+        background_ahorcado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(79, 88, 107), 15));
 
         jLabel1.setFont(new java.awt.Font("BubbleGum", 0, 72)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(56, 62, 70));
+        jLabel1.setForeground(new java.awt.Color(103, 119, 154));
         jLabel1.setText("MENU AHORCADO");
 
-        jPanel3.setBackground(new java.awt.Color(57, 62, 70));
+        jPanel3.setBackground(new java.awt.Color(79, 88, 107));
         jPanel3.setPreferredSize(new java.awt.Dimension(347, 270));
 
         jLabel7.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
@@ -95,25 +94,25 @@ public class menuAhorcado extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
                             .addComponent(jLabel10))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(9, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
                 .addGap(19, 19, 19))
         );
 
-        jPanel2.setBackground(new java.awt.Color(57, 62, 70));
+        jPanel2.setBackground(new java.awt.Color(79, 88, 107));
 
         jLabel2.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -155,20 +154,22 @@ public class menuAhorcado extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
                 .addGap(19, 19, 19))
         );
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnVolver.setBackground(new java.awt.Color(204, 204, 204));
+        btnVolver.setFont(new java.awt.Font("Avocado Cake", 1, 14)); // NOI18N
         btnVolver.setText("Volver");
         btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -176,35 +177,40 @@ public class menuAhorcado extends javax.swing.JFrame {
             }
         });
 
+        btnPrimerNivel.setBackground(new java.awt.Color(162, 176, 202));
+        btnPrimerNivel.setFont(new java.awt.Font("Avocado Cake", 0, 14)); // NOI18N
         btnPrimerNivel.setText("Primer Nivel");
+        btnPrimerNivel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnPrimerNivel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPrimerNivelActionPerformed(evt);
             }
         });
 
+        btnCuartoNivel.setBackground(new java.awt.Color(92, 101, 121));
+        btnCuartoNivel.setFont(new java.awt.Font("Avocado Cake", 0, 14)); // NOI18N
         btnCuartoNivel.setText("Cuarto Nivel");
+        btnCuartoNivel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnCuartoNivel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCuartoNivelActionPerformed(evt);
             }
         });
 
+        btnSegundoNivel.setBackground(new java.awt.Color(141, 153, 175));
+        btnSegundoNivel.setFont(new java.awt.Font("Avocado Cake", 0, 14)); // NOI18N
         btnSegundoNivel.setText("Segudo Nivel");
+        btnSegundoNivel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnSegundoNivel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSegundoNivelActionPerformed(evt);
             }
         });
 
-        btnQuintoNivel.setText("Quinto Nivel");
-        btnQuintoNivel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnQuintoNivelActionPerformed(evt);
-            }
-        });
-
+        btnTercerNivel.setBackground(new java.awt.Color(126, 136, 156));
+        btnTercerNivel.setFont(new java.awt.Font("Avocado Cake", 0, 14)); // NOI18N
         btnTercerNivel.setText("Tercer Nivel");
+        btnTercerNivel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnTercerNivel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTercerNivelActionPerformed(evt);
@@ -218,62 +224,65 @@ public class menuAhorcado extends javax.swing.JFrame {
             .addGroup(background_ahorcadoLayout.createSequentialGroup()
                 .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(78, 78, 78)
-                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                                .addGap(54, 54, 54)
-                                .addComponent(btnCuartoNivel)
-                                .addGap(40, 40, 40)
-                                .addComponent(btnQuintoNivel))
-                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                                .addComponent(btnPrimerNivel)
-                                .addGap(33, 33, 33)
-                                .addComponent(btnSegundoNivel)
-                                .addGap(28, 28, 28)
-                                .addComponent(btnTercerNivel))))
+                        .addContainerGap()
+                        .addComponent(btnVolver))
                     .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                                .addGap(63, 63, 63)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(btnVolver)))
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                                .addGap(45, 45, 45)
+                                .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                        .addComponent(btnPrimerNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(232, 232, 232)
+                                        .addComponent(btnTercerNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                        .addGap(93, 93, 93)
+                                        .addComponent(btnCuartoNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                        .addGap(175, 175, 175)
+                                        .addComponent(btnSegundoNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addGap(54, 54, 54))
         );
         background_ahorcadoLayout.setVerticalGroup(
             background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, background_ahorcadoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, background_ahorcadoLayout.createSequentialGroup()
+                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                .addGap(115, 115, 115)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(42, 42, 42))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, background_ahorcadoLayout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32)))
+                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(btnSegundoNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(49, 49, 49)
+                                .addComponent(btnCuartoNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(btnPrimerNivel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnTercerNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, background_ahorcadoLayout.createSequentialGroup()
+                        .addComponent(btnVolver)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnVolver)))
-                .addGap(18, 18, 18)
-                .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(78, 78, 78)
-                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnPrimerNivel)
-                            .addComponent(btnSegundoNivel)
-                            .addComponent(btnTercerNivel))
-                        .addGap(35, 35, 35)
-                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnCuartoNivel)
-                            .addComponent(btnQuintoNivel)))
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(32, 32, 32))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -281,14 +290,14 @@ public class menuAhorcado extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(background_ahorcado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(background_ahorcado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(background_ahorcado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(background_ahorcado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 79, Short.MAX_VALUE))
         );
 
         pack();
@@ -318,12 +327,6 @@ public class menuAhorcado extends javax.swing.JFrame {
         jAhorcado2.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnSegundoNivelActionPerformed
-
-    private void btnQuintoNivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuintoNivelActionPerformed
-        AhorcadoNivel5 jAhorcado5 = new AhorcadoNivel5();
-        jAhorcado5.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_btnQuintoNivelActionPerformed
 
     private void btnTercerNivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTercerNivelActionPerformed
         AhorcadoNivel3 jAhorcado3 = new AhorcadoNivel3();
@@ -370,7 +373,6 @@ public class menuAhorcado extends javax.swing.JFrame {
     private javax.swing.JPanel background_ahorcado;
     private javax.swing.JButton btnCuartoNivel;
     private javax.swing.JButton btnPrimerNivel;
-    private javax.swing.JButton btnQuintoNivel;
     private javax.swing.JButton btnSegundoNivel;
     private javax.swing.JButton btnTercerNivel;
     private javax.swing.JButton btnVolver;

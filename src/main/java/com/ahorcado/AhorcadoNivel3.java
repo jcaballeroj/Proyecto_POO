@@ -4,9 +4,15 @@
  */
 package com.ahorcado;
 
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.category.DefaultCategoryDataset;
 
 
 
@@ -28,12 +34,16 @@ public class AhorcadoNivel3 extends javax.swing.JFrame {
 
     private int puntaje = 100;
     private int intentos = 0;
+    
+    private JTextField[] txtFields;
 
     public AhorcadoNivel3() {
         initComponents();
         palabras = new String[6];
         btns = new JButton[27];
         botonFrase = new JButton();
+        
+        txtFields = new JTextField[8]; // 8 JTextField para cada letra de "ahorcado"
 
         //Palabras para adivinar
         palabras[0] = "la oscuridad".toUpperCase();
@@ -42,6 +52,16 @@ public class AhorcadoNivel3 extends javax.swing.JFrame {
         palabras[3] = "la letra u".toUpperCase();
         palabras[4] = "la sombra".toUpperCase();
         palabras[5] = "la luna".toUpperCase();
+        
+        //txtField en pantalla 
+        txtFields[0] = txtA;
+        txtFields[1] = txtH;
+        txtFields[2] = txtO;
+        txtFields[3] = txtR;
+        txtFields[4] = txtC;
+        txtFields[5] = txtA4;
+        txtFields[6] = txtD;
+        txtFields[7] = txtO2;
 
         //Botones para las letras
         btns[1] = a_facil;
@@ -146,8 +166,14 @@ public class AhorcadoNivel3 extends javax.swing.JFrame {
             jTextPane1.setText(jTextPane1.getText() + " ");
             res[j++] = " ";
         }
+        
+        // Reiniciar los JTextField
+        for (JTextField txtField : txtFields) {
+            txtField.setText("");
+        }
 
     }
+     int porcentaje, porcentajePromedio, porcentajeTotal ;
     int contador = 0;
 
     public void checarLetra(ActionEvent e) {
@@ -190,7 +216,10 @@ public class AhorcadoNivel3 extends javax.swing.JFrame {
                     if (gano) {
                         JOptionPane.showMessageDialog(this, "Ganaste :3!!!");
                         contador++;
+                        porcentajePromedio += porcentaje;
                         if (contador == 4) {
+                            porcentajeTotal = porcentajePromedio/contador;
+                            grafica();
                             int respuesta = JOptionPane.showConfirmDialog(null, "Desea continuar?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                             if (respuesta == JOptionPane.YES_OPTION) {
                                 //Llamando al segundo nivel
@@ -209,15 +238,22 @@ public class AhorcadoNivel3 extends javax.swing.JFrame {
                         return;
                     }
 
-                    //SI LA LETRA NO ESTA EN EL MENSAGE, SE INCREMENTA EL ERROR Y SE CAMBIA LA IMAGEN
+                    //Si la letra no esta se aumenta el mensaje y se le disminuye al puntaje
                 } else {
                     err++;
                     puntaje -= 5;
                     lblPuntaje.setText("Puntaje= " + puntaje);
-                    //jButton1.setIcon(imgs[++err]);
-                    //SI SE LLEGA A LOS 5 ERRORES ENTONCES SE PIERDE EL JUEGO Y SE MANDA EL MENSAGE DE:
-                    if (err == 3) {
-                        JOptionPane.showMessageDialog(this, "Intenta con otra palabra la respuesta es: \n" + palabras[ran]);
+                    
+                    //Porcentaje de error
+                    porcentaje = (err *100)/8;
+                    
+                    String palabraError = "AHORCADO";
+                    if (err <= palabraError.length()) {
+                        txtFields[err - 1].setText(String.valueOf(palabraError.charAt(err - 1)));
+                    }
+                    //Si llega a 8 intentos y el porcentaje de error es 100% se inicia de nuevo
+                    if (err == 8 && porcentaje == 100) {
+                        JOptionPane.showMessageDialog(this, "Intenta con otra palabra. La respuesta es: \n" + palabras[ran]);
                         iniciar();
                         return;
                     }
@@ -225,8 +261,27 @@ public class AhorcadoNivel3 extends javax.swing.JFrame {
                 //esta es la linea que desactiva las letras despues de ser usadas :3
                 bt.setEnabled(false);
                 break;
-            }
+            }       
         }
+    }
+    
+    public void grafica() {
+        DefaultCategoryDataset datos = new DefaultCategoryDataset();
+
+        datos.setValue(puntaje, "Puntaje: " +puntaje, "");
+        datos.setValue(intentos, "Intentos: " + intentos, "");
+        datos.setValue(porcentaje, "Porcentaje Promedio total: " +porcentajeTotal+" %", "");
+        
+        JFreeChart grafico_barras = ChartFactory.createBarChart3D("Calificacion Del Tercer Nivel", "", "", datos);
+
+        ChartPanel panel = new ChartPanel(grafico_barras);
+        panel.setMouseWheelEnabled(true);
+        panel.setPreferredSize(new Dimension(400, 300));
+        // Mostrar el gráfico en un JOptionPane
+        JOptionPane.showMessageDialog(null, panel, "Gráfico de Calificación", JOptionPane.PLAIN_MESSAGE);
+        
+        pack();
+        repaint();
     }
 
     /**
@@ -238,8 +293,8 @@ public class AhorcadoNivel3 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel21 = new javax.swing.JLabel();
         background_ahorcado = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -282,6 +337,11 @@ public class AhorcadoNivel3 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
         g_facil = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
@@ -289,18 +349,24 @@ public class AhorcadoNivel3 extends javax.swing.JFrame {
         btnVolver1 = new javax.swing.JButton();
         lblPuntaje = new javax.swing.JLabel();
         lblIntentos = new javax.swing.JLabel();
+        txtA = new javax.swing.JTextField();
+        txtH = new javax.swing.JTextField();
+        txtO = new javax.swing.JTextField();
+        txtR = new javax.swing.JTextField();
+        txtC = new javax.swing.JTextField();
+        txtD = new javax.swing.JTextField();
+        txtA4 = new javax.swing.JTextField();
+        txtO2 = new javax.swing.JTextField();
+
+        jLabel21.setFont(new java.awt.Font("Dinomiko", 0, 36)); // NOI18N
+        jLabel21.setText("1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(782, 468));
 
         background_ahorcado.setBackground(new java.awt.Color(255, 255, 255));
-        background_ahorcado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(57, 62, 70), 15));
+        background_ahorcado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(126, 136, 156), 15));
 
-        jLabel1.setFont(new java.awt.Font("BubbleGum", 0, 72)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(56, 62, 70));
-        jLabel1.setText("AHORCADO");
-
-        jPanel3.setBackground(new java.awt.Color(57, 62, 70));
+        jPanel3.setBackground(new java.awt.Color(109, 124, 156));
         jPanel3.setPreferredSize(new java.awt.Dimension(347, 270));
 
         jLabel7.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
@@ -378,7 +444,7 @@ public class AhorcadoNivel3 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(57, 62, 70));
+        jPanel2.setBackground(new java.awt.Color(109, 124, 156));
 
         jLabel2.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -637,23 +703,64 @@ public class AhorcadoNivel3 extends javax.swing.JFrame {
         jPanel8.setBackground(new java.awt.Color(146, 154, 171));
 
         jLabel16.setFont(new java.awt.Font("Avocado Cake", 0, 24)); // NOI18N
-        jLabel16.setText("VIDA");
+        jLabel16.setText("N");
+
+        jLabel17.setFont(new java.awt.Font("Avocado Cake", 0, 24)); // NOI18N
+        jLabel17.setText("I");
+
+        jLabel18.setFont(new java.awt.Font("Avocado Cake", 0, 24)); // NOI18N
+        jLabel18.setText("V");
+
+        jLabel19.setFont(new java.awt.Font("Avocado Cake", 0, 24)); // NOI18N
+        jLabel19.setText("E");
+
+        jLabel20.setFont(new java.awt.Font("Avocado Cake", 0, 24)); // NOI18N
+        jLabel20.setText("L");
+
+        jLabel22.setFont(new java.awt.Font("Dinomiko", 0, 36)); // NOI18N
+        jLabel22.setText("3");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
-                .addComponent(jLabel16)
-                .addGap(28, 28, 28))
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                        .addComponent(jLabel16)
+                        .addGap(22, 22, 22))
+                    .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel18))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel17))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(jLabel22)))
+                .addContainerGap(9, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(30, 30, 30)
                 .addComponent(jLabel16)
-                .addContainerGap(254, Short.MAX_VALUE))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel17))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel18)))
+                .addGap(2, 2, 2)
+                .addComponent(jLabel19)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel20)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel22)
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         g_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
@@ -668,6 +775,7 @@ public class AhorcadoNivel3 extends javax.swing.JFrame {
         jTextPane1.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jScrollPane1.setViewportView(jTextPane1);
 
+        btnFrase.setBackground(new java.awt.Color(204, 204, 255));
         btnFrase.setText("?");
 
         btnVolver1.setText("Volver");
@@ -681,6 +789,92 @@ public class AhorcadoNivel3 extends javax.swing.JFrame {
 
         lblIntentos.setText("...");
 
+        txtA.setEditable(false);
+        txtA.setBackground(new java.awt.Color(204, 204, 204));
+        txtA.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        txtA.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtA.setAutoscrolls(false);
+        txtA.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txtA.setFocusable(false);
+        txtA.setMaximumSize(new java.awt.Dimension(50, 88));
+        txtA.setMinimumSize(new java.awt.Dimension(50, 88));
+        txtA.setOpaque(true);
+        txtA.setPreferredSize(new java.awt.Dimension(50, 88));
+        txtA.setRequestFocusEnabled(false);
+
+        txtH.setEditable(false);
+        txtH.setBackground(new java.awt.Color(204, 204, 204));
+        txtH.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtH.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtH.setAutoscrolls(false);
+        txtH.setBorder(null);
+        txtH.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txtH.setMaximumSize(new java.awt.Dimension(50, 88));
+        txtH.setMinimumSize(new java.awt.Dimension(50, 88));
+        txtH.setPreferredSize(new java.awt.Dimension(50, 88));
+        txtH.setRequestFocusEnabled(false);
+        txtH.setVerifyInputWhenFocusTarget(false);
+
+        txtO.setEditable(false);
+        txtO.setBackground(new java.awt.Color(204, 204, 204));
+        txtO.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtO.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtO.setMaximumSize(new java.awt.Dimension(50, 88));
+        txtO.setMinimumSize(new java.awt.Dimension(50, 88));
+        txtO.setPreferredSize(new java.awt.Dimension(50, 88));
+        txtO.setRequestFocusEnabled(false);
+
+        txtR.setEditable(false);
+        txtR.setBackground(new java.awt.Color(204, 204, 204));
+        txtR.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtR.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtR.setMaximumSize(new java.awt.Dimension(50, 88));
+        txtR.setMinimumSize(new java.awt.Dimension(50, 88));
+        txtR.setPreferredSize(new java.awt.Dimension(50, 88));
+        txtR.setRequestFocusEnabled(false);
+
+        txtC.setEditable(false);
+        txtC.setBackground(new java.awt.Color(204, 204, 204));
+        txtC.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtC.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtC.setMaximumSize(new java.awt.Dimension(50, 88));
+        txtC.setMinimumSize(new java.awt.Dimension(50, 88));
+        txtC.setPreferredSize(new java.awt.Dimension(50, 88));
+        txtC.setRequestFocusEnabled(false);
+
+        txtD.setEditable(false);
+        txtD.setBackground(new java.awt.Color(204, 204, 204));
+        txtD.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtD.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtD.setMaximumSize(new java.awt.Dimension(50, 88));
+        txtD.setMinimumSize(new java.awt.Dimension(50, 88));
+        txtD.setPreferredSize(new java.awt.Dimension(50, 88));
+        txtD.setRequestFocusEnabled(false);
+
+        txtA4.setEditable(false);
+        txtA4.setBackground(new java.awt.Color(204, 204, 204));
+        txtA4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtA4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtA4.setMaximumSize(new java.awt.Dimension(50, 88));
+        txtA4.setMinimumSize(new java.awt.Dimension(50, 88));
+        txtA4.setName(""); // NOI18N
+        txtA4.setPreferredSize(new java.awt.Dimension(50, 88));
+        txtA4.setRequestFocusEnabled(false);
+        txtA4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtA4ActionPerformed(evt);
+            }
+        });
+
+        txtO2.setEditable(false);
+        txtO2.setBackground(new java.awt.Color(204, 204, 204));
+        txtO2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtO2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtO2.setMaximumSize(new java.awt.Dimension(50, 88));
+        txtO2.setMinimumSize(new java.awt.Dimension(50, 88));
+        txtO2.setPreferredSize(new java.awt.Dimension(50, 88));
+        txtO2.setRequestFocusEnabled(false);
+
         javax.swing.GroupLayout background_ahorcadoLayout = new javax.swing.GroupLayout(background_ahorcado);
         background_ahorcado.setLayout(background_ahorcadoLayout);
         background_ahorcadoLayout.setHorizontalGroup(
@@ -689,14 +883,22 @@ public class AhorcadoNivel3 extends javax.swing.JFrame {
                 .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(background_ahorcadoLayout.createSequentialGroup()
                         .addGap(41, 41, 41)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnVolver1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
                         .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(a_facil)
                             .addComponent(k_facil))
-                        .addGap(11, 11, 11)
                         .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                .addGap(33, 33, 33)
                                 .addComponent(t_facil)
                                 .addGap(21, 21, 21)
                                 .addComponent(u_facil)
@@ -711,7 +913,7 @@ public class AhorcadoNivel3 extends javax.swing.JFrame {
                                 .addGap(11, 11, 11)
                                 .addComponent(z_facil))
                             .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
+                                .addGap(43, 43, 43)
                                 .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(background_ahorcadoLayout.createSequentialGroup()
                                         .addComponent(l_facil)
@@ -752,19 +954,24 @@ public class AhorcadoNivel3 extends javax.swing.JFrame {
                                             .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(28, 28, 28)
                                             .addComponent(btnFrase))
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(26, 26, 26))
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                                .addGap(63, 63, 63)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(btnVolver1)))
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(txtA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtA4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtO2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(26, 26, 26)
                 .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -779,26 +986,34 @@ public class AhorcadoNivel3 extends javax.swing.JFrame {
         background_ahorcadoLayout.setVerticalGroup(
             background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnVolver1)
                             .addGroup(background_ahorcadoLayout.createSequentialGroup()
                                 .addComponent(lblPuntaje)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblIntentos))
-                            .addComponent(btnVolver1))))
-                .addGap(18, 18, 18)
+                                .addComponent(lblIntentos)))
+                        .addGap(60, 60, 60))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, background_ahorcadoLayout.createSequentialGroup()
+                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtH, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtO, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtR, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtC, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtA4, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtD, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtA, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtO2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)))
                 .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(background_ahorcadoLayout.createSequentialGroup()
                         .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(33, Short.MAX_VALUE))
+                        .addContainerGap(25, Short.MAX_VALUE))
                     .addGroup(background_ahorcadoLayout.createSequentialGroup()
                         .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(background_ahorcadoLayout.createSequentialGroup()
@@ -979,6 +1194,10 @@ public class AhorcadoNivel3 extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnVolver1ActionPerformed
 
+    private void txtA4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtA4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtA4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1027,12 +1246,17 @@ public class AhorcadoNivel3 extends javax.swing.JFrame {
     private javax.swing.JButton g_facil;
     private javax.swing.JButton h_facil;
     private javax.swing.JButton i_facil;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1060,6 +1284,14 @@ public class AhorcadoNivel3 extends javax.swing.JFrame {
     private javax.swing.JButton r_facil;
     private javax.swing.JButton s_facil;
     private javax.swing.JButton t_facil;
+    private javax.swing.JTextField txtA;
+    private javax.swing.JTextField txtA4;
+    private javax.swing.JTextField txtC;
+    private javax.swing.JTextField txtD;
+    private javax.swing.JTextField txtH;
+    private javax.swing.JTextField txtO;
+    private javax.swing.JTextField txtO2;
+    private javax.swing.JTextField txtR;
     private javax.swing.JButton u_facil;
     private javax.swing.JButton v_facil;
     private javax.swing.JButton w_facil;

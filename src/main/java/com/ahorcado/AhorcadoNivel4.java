@@ -4,12 +4,19 @@
  */
 package com.ahorcado;
 
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 import java.util.HashSet;
 import java.util.Set;
+import javax.swing.JTextField;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.category.DefaultCategoryDataset;
 
 /**
  *
@@ -28,12 +35,16 @@ public class AhorcadoNivel4 extends javax.swing.JFrame {
 
     private int puntaje = 100;
     private int intentos = 0;
+    
+    private JTextField[] txtFields;
 
     public AhorcadoNivel4() {
         initComponents();
         palabras = new String[7];
         btns = new JButton[27];
         botonFrase = new JButton();
+        
+         txtFields = new JTextField[8]; // 8 JTextField para cada letra de "ahorcado"
 
         //Palabras para adivinar
         palabras[0] = "el piano".toUpperCase();
@@ -43,6 +54,16 @@ public class AhorcadoNivel4 extends javax.swing.JFrame {
         palabras[4] = "el sonido".toUpperCase();
         palabras[5] = "el espejo".toUpperCase();
         palabras[6] = "el agua".toUpperCase();
+        
+        //txtField en pantalla 
+        txtFields[0] = txtA;
+        txtFields[1] = txtH;
+        txtFields[2] = txtO;
+        txtFields[3] = txtR;
+        txtFields[4] = txtC;
+        txtFields[5] = txtA4;
+        txtFields[6] = txtD;
+        txtFields[7] = txtO2;
 
         //Botones para las letras
         btns[1] = a_facil;
@@ -81,22 +102,25 @@ public class AhorcadoNivel4 extends javax.swing.JFrame {
         }
 
         //mostrando la frase que salio aleatorio para advinidar la palabra
-        botonFrase.addActionListener((ActionEvent e) -> {
-            // Aquí muestras la frase correspondiente a la palabra que se está adivinando
-            if (palabras[ran].equals(palabras[0])) {
-                JOptionPane.showMessageDialog(null, "Cien hermanitos en una sola tabla, si nadie los toca ninguno habla. ¿Qué es?");
-            } else if (palabras[ran].equals(palabras[1])) {
-                JOptionPane.showMessageDialog(null, "Soy algo que todos quieren alcanzar, aunque nunca me puedan atrapar. Siempre estoy frente a ti, aunque no puedas verme. A veces, soy un sueño lejano, otras, una meta por cumplir. ¿Qué soy?");
-            } else if (palabras[ran].equals(palabras[2])) {
-                JOptionPane.showMessageDialog(null, "Nací antes que el sol y siempre estaré allí, aun cuando las estrellas desaparezcan. Sin mí, el tiempo sería un concepto vacío. ¿Quién soy?");
-            } else if (palabras[ran].equals(palabras[3])) {
-                JOptionPane.showMessageDialog(null, "Vivo en lo profundo de la tierra, pero también en las alturas celestiales. En mi ser, guardo secretos de mundos olvidados y futuros inciertos. ¿Qué soy?");
-            } else if (palabras[ran].equals(palabras[4])) {
-                JOptionPane.showMessageDialog(null, "Viajo sin moverme, siempre presente, aunque invisible a simple vista. Sin mí, el mundo sería un lugar silente y vacío. ¿Quién soy?");
-            } else if (palabras[ran].equals(palabras[5])) {
-                JOptionPane.showMessageDialog(null, "Soy el reflejo de tus deseos más profundos, pero también de tus miedos más oscuros. En mí, ves lo que quieres ver, pero también lo que necesitas enfrentar. ¿Qué soy?");
-            } else if (palabras[ran].equals(palabras[6])) {
-                JOptionPane.showMessageDialog(null, "Puedo ser tan vasto como el océano o tan pequeño como un grano de arena. Sin mí, no habría vida, pero también puedo ser una fuerza destructiva. ¿Quién soy?");
+        botonFrase.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Aquí muestras la frase correspondiente a la palabra que se está adivinando
+                if (palabras[ran].equals(palabras[0])) {
+                    JOptionPane.showMessageDialog(null, "Cien hermanitos en una sola tabla, si nadie los toca ninguno habla. ¿Qué es?");
+                } else if (palabras[ran].equals(palabras[1])) {
+                    JOptionPane.showMessageDialog(null, "Soy algo que todos quieren alcanzar, aunque nunca me puedan atrapar."+"\n Siempre estoy frente a ti, aunque no puedas verme."+"\n A veces, soy un sueño lejano, otras, una meta por cumplir. ¿Qué soy?");
+                } else if (palabras[ran].equals(palabras[2])) {
+                    JOptionPane.showMessageDialog(null, "Nací antes que el sol y siempre estaré allí, aun cuando las estrellas desaparezcan."+"\n Sin mí, el tiempo sería un concepto vacío. ¿Quién soy?");
+                } else if (palabras[ran].equals(palabras[3])) {
+                    JOptionPane.showMessageDialog(null, "Vivo en lo profundo de la tierra, pero también en las alturas celestiales."+"\n En mi ser, guardo secretos de mundos olvidados y futuros inciertos. ¿Qué soy?");
+                } else if (palabras[ran].equals(palabras[4])) {
+                    JOptionPane.showMessageDialog(null, "Viajo sin moverme, siempre presente, aunque invisible a simple vista."+"\n Sin mí, el mundo sería un lugar silente y vacío. ¿Quién soy?");
+                } else if (palabras[ran].equals(palabras[5])) {
+                    JOptionPane.showMessageDialog(null, "Soy el reflejo de tus deseos más profundos, pero también de tus miedos más oscuros."+"\n En mí, ves lo que quieres ver, pero también lo que necesitas enfrentar. ¿Qué soy?");
+                } else if (palabras[ran].equals(palabras[6])) {
+                    JOptionPane.showMessageDialog(null, "Puedo ser tan vasto como el océano o tan pequeño como un grano de arena."+"\n Sin mí, no habría vida, pero también puedo ser una fuerza destructiva. ¿Quién soy?");
+                }
             }
         });
         iniciar();
@@ -109,7 +133,7 @@ public class AhorcadoNivel4 extends javax.swing.JFrame {
         err = 0;
         jTextPane1.setText("");  
         //para generar una palabra aleatoriamente
-        ran = (int) 0 + (int) (Math.random() * ((palabras.length - 1) + 1));
+        ran = (int) (Math.random() * (palabras.length - 1));
         //SEPARA EL MENSAJE POR PALABRAS
         String pal[] = palabras[ran].split(" ");
         res = new String[palabras[ran].length() + 1];
@@ -125,15 +149,15 @@ public class AhorcadoNivel4 extends javax.swing.JFrame {
         } else if (palabras[ran].equals(palabras[1])) {
             JOptionPane.showMessageDialog(null, "Soy algo que todos quieren alcanzar, aunque nunca me puedan atrapar." + "\nSiempre estoy frente a ti, aunque no puedas verme" + " \nA veces, soy un sueño lejano, otras, una meta por cumplir. ¿Qué soy?");
         } else if (palabras[ran].equals(palabras[2])) {
-            JOptionPane.showMessageDialog(null, "Nací antes que el sol y siempre estaré allí, aun cuando las estrellas desaparezcan. Sin mí, el tiempo sería un concepto vacío. ¿Quién soy?");
+            JOptionPane.showMessageDialog(null, "Nací antes que el sol y siempre estaré allí, aun cuando las estrellas desaparezcan."+"\n Sin mí, el tiempo sería un concepto vacío. ¿Quién soy?");
         } else if (palabras[ran].equals(palabras[3])) {
-            JOptionPane.showMessageDialog(null, "Vivo en lo profundo de la tierra, pero también en las alturas celestiales. En mi ser, guardo secretos de mundos olvidados y futuros inciertos. ¿Qué soy?");
+            JOptionPane.showMessageDialog(null, "Vivo en lo profundo de la tierra, pero también en las alturas celestiales."+"\n En mi ser, guardo secretos de mundos olvidados y futuros inciertos. ¿Qué soy?");
         } else if (palabras[ran].equals(palabras[4])) {
-            JOptionPane.showMessageDialog(null, "Viajo sin moverme, siempre presente, aunque invisible a simple vista. Sin mí, el mundo sería un lugar silente y vacío. ¿Quién soy?");
+            JOptionPane.showMessageDialog(null, "Viajo sin moverme, siempre presente, aunque invisible a simple vista."+"\n Sin mí, el mundo sería un lugar silente y vacío. ¿Quién soy?");
         } else if (palabras[ran].equals(palabras[5])) {
-            JOptionPane.showMessageDialog(null, "Soy el reflejo de tus deseos más profundos, pero también de tus miedos más oscuros. En mí, ves lo que quieres ver, pero también lo que necesitas enfrentar. ¿Qué soy?");
+            JOptionPane.showMessageDialog(null, "Soy el reflejo de tus deseos más profundos, pero también de tus miedos más oscuros."+"\n En mí, ves lo que quieres ver, pero también lo que necesitas enfrentar. ¿Qué soy?");
         } else if (palabras[ran].equals(palabras[6])) {
-            JOptionPane.showMessageDialog(null, "Puedo ser tan vasto como el océano o tan pequeño como un grano de arena. Sin mí, no habría vida, pero también puedo ser una fuerza destructiva. ¿Quién soy?");
+            JOptionPane.showMessageDialog(null, "Puedo ser tan vasto como el océano o tan pequeño como un grano de arena."+"\n Sin mí, no habría vida, pero también puedo ser una fuerza destructiva. ¿Quién soy?");
         }
         // seran los guiones que van debajo de las letras como una separacion_
         for (String pal1 : pal) {
@@ -150,10 +174,14 @@ public class AhorcadoNivel4 extends javax.swing.JFrame {
             jTextPane1.setText(jTextPane1.getText() + " ");
             res[j++] = " ";
         }
+        // Reiniciar los JTextField
+        for (JTextField txtField : txtFields) {
+            txtField.setText("");
+        }
 
     }
+    int porcentaje, porcentajePromedio, porcentajeTotal ;
     int contador = 0;
-
     public void checarLetra(ActionEvent e) {
         JButton bt = (JButton) e.getSource();
         char c[];
@@ -194,15 +222,12 @@ public class AhorcadoNivel4 extends javax.swing.JFrame {
                     if (gano) {
                         JOptionPane.showMessageDialog(this, "Ganaste :3!!!");
                         contador++;
+                        porcentajePromedio += porcentaje;
                         if (contador == 5) {
+                            porcentajeTotal = porcentajePromedio/contador;
                             int respuesta = JOptionPane.showConfirmDialog(null, "Desea continuar?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                             if (respuesta == JOptionPane.YES_OPTION) {
-                                //Llamando al segundo nivel
-                                AhorcadoNivel5 jNivel5 = new AhorcadoNivel5();
-                                jNivel5.setVisible(true);
-                                dispose();
-                                break;
-                            } else {
+                                grafica();
                                 menuAhorcado menu = new menuAhorcado();
                                 menu.setVisible(true);
                                 dispose();
@@ -213,15 +238,22 @@ public class AhorcadoNivel4 extends javax.swing.JFrame {
                         return;
                     }
 
-                    //SI LA LETRA NO ESTA EN EL MENSAGE, SE INCREMENTA EL ERROR Y SE CAMBIA LA IMAGEN
+                    //Si la letra no esta se aumenta el mensaje y se le disminuye al puntaje
                 } else {
                     err++;
                     puntaje -= 6;
                     lblPuntaje.setText("Puntaje= " + puntaje);
-                    //jButton1.setIcon(imgs[++err]);
-                    //SI SE LLEGA A LOS 5 ERRORES ENTONCES SE PIERDE EL JUEGO Y SE MANDA EL MENSAGE DE:
-                    if (err == 3) {
-                        JOptionPane.showMessageDialog(this, "Intenta con otra palabra la respuesta es: \n" + palabras[ran]);
+                    
+                    //Porcentaje de error
+                    porcentaje = (err *100)/8;
+                    
+                    String palabraError = "AHORCADO";
+                    if (err <= palabraError.length()) {
+                        txtFields[err - 1].setText(String.valueOf(palabraError.charAt(err - 1)));
+                    }
+                    //Si llega a 8 intentos y el porcentaje de error es 100% se inicia de nuevo
+                    if (err == 8 && porcentaje == 100) {
+                        JOptionPane.showMessageDialog(this, "Intenta con otra palabra. La respuesta es: \n" + palabras[ran]);
                         iniciar();
                         return;
                     }
@@ -231,6 +263,25 @@ public class AhorcadoNivel4 extends javax.swing.JFrame {
                 break;
             }
         }
+    }
+    
+    public void grafica() {
+        DefaultCategoryDataset datos = new DefaultCategoryDataset();
+
+        datos.setValue(puntaje, "Puntaje: " +puntaje, "");
+        datos.setValue(intentos, "Intentos: " + intentos, "");
+        datos.setValue(porcentaje, "Porcentaje Promedio total: " +porcentajeTotal+" %", "");
+        
+        JFreeChart grafico_barras = ChartFactory.createBarChart3D("Calificacion Del Cuarto Nivel", "", "", datos);
+
+        ChartPanel panel = new ChartPanel(grafico_barras);
+        panel.setMouseWheelEnabled(true);
+        panel.setPreferredSize(new Dimension(400, 300));
+        // Mostrar el gráfico en un JOptionPane
+        JOptionPane.showMessageDialog(null, panel, "Gráfico de Calificación", JOptionPane.PLAIN_MESSAGE);
+        
+        pack();
+        repaint();
     }
 
     /**
@@ -243,7 +294,6 @@ public class AhorcadoNivel4 extends javax.swing.JFrame {
     private void initComponents() {
 
         background_ahorcado = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -286,6 +336,11 @@ public class AhorcadoNivel4 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         g_facil = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
@@ -293,17 +348,21 @@ public class AhorcadoNivel4 extends javax.swing.JFrame {
         btnVolver1 = new javax.swing.JButton();
         lblIntentos = new javax.swing.JLabel();
         lblPuntaje = new javax.swing.JLabel();
+        txtA = new javax.swing.JTextField();
+        txtH = new javax.swing.JTextField();
+        txtO = new javax.swing.JTextField();
+        txtR = new javax.swing.JTextField();
+        txtC = new javax.swing.JTextField();
+        txtD = new javax.swing.JTextField();
+        txtA4 = new javax.swing.JTextField();
+        txtO2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         background_ahorcado.setBackground(new java.awt.Color(255, 255, 255));
-        background_ahorcado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(57, 62, 70), 15));
+        background_ahorcado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 101, 121), 15));
 
-        jLabel1.setFont(new java.awt.Font("BubbleGum", 0, 72)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(56, 62, 70));
-        jLabel1.setText("AHORCADO");
-
-        jPanel3.setBackground(new java.awt.Color(57, 62, 70));
+        jPanel3.setBackground(new java.awt.Color(86, 94, 112));
         jPanel3.setPreferredSize(new java.awt.Dimension(347, 270));
 
         jLabel7.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
@@ -381,7 +440,7 @@ public class AhorcadoNivel4 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(57, 62, 70));
+        jPanel2.setBackground(new java.awt.Color(86, 94, 112));
 
         jLabel2.setFont(new java.awt.Font("Avocado Cake", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -640,23 +699,70 @@ public class AhorcadoNivel4 extends javax.swing.JFrame {
         jPanel8.setBackground(new java.awt.Color(146, 154, 171));
 
         jLabel16.setFont(new java.awt.Font("Avocado Cake", 0, 24)); // NOI18N
-        jLabel16.setText("VIDA");
+        jLabel16.setText("N");
+
+        jLabel17.setFont(new java.awt.Font("Avocado Cake", 0, 24)); // NOI18N
+        jLabel17.setText("I");
+
+        jLabel18.setFont(new java.awt.Font("Avocado Cake", 0, 24)); // NOI18N
+        jLabel18.setText("V");
+
+        jLabel19.setFont(new java.awt.Font("Avocado Cake", 0, 24)); // NOI18N
+        jLabel19.setText("E");
+
+        jLabel20.setFont(new java.awt.Font("Avocado Cake", 0, 24)); // NOI18N
+        jLabel20.setText("L");
+
+        jLabel21.setFont(new java.awt.Font("Dinomiko", 0, 36)); // NOI18N
+        jLabel21.setText("4");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
-                .addComponent(jLabel16)
-                .addGap(28, 28, 28))
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(0, 6, Short.MAX_VALUE)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                                .addComponent(jLabel19)
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                                .addComponent(jLabel20)
+                                .addGap(28, 28, 28))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                                .addComponent(jLabel21)
+                                .addGap(15, 15, 15))))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jLabel18)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel17)
+                        .addContainerGap())))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel16)
-                .addContainerGap(254, Short.MAX_VALUE))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel17))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel16)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addComponent(jLabel18)
+                .addGap(9, 9, 9)
+                .addComponent(jLabel19)
+                .addGap(5, 5, 5)
+                .addComponent(jLabel20)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel21)
+                .addGap(44, 44, 44))
         );
 
         g_facil.setFont(new java.awt.Font("Avocado Cake", 0, 18)); // NOI18N
@@ -684,6 +790,92 @@ public class AhorcadoNivel4 extends javax.swing.JFrame {
 
         lblPuntaje.setText("...");
 
+        txtA.setEditable(false);
+        txtA.setBackground(new java.awt.Color(204, 204, 204));
+        txtA.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        txtA.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtA.setAutoscrolls(false);
+        txtA.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txtA.setFocusable(false);
+        txtA.setMaximumSize(new java.awt.Dimension(50, 88));
+        txtA.setMinimumSize(new java.awt.Dimension(50, 88));
+        txtA.setOpaque(true);
+        txtA.setPreferredSize(new java.awt.Dimension(50, 88));
+        txtA.setRequestFocusEnabled(false);
+
+        txtH.setEditable(false);
+        txtH.setBackground(new java.awt.Color(204, 204, 204));
+        txtH.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtH.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtH.setAutoscrolls(false);
+        txtH.setBorder(null);
+        txtH.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txtH.setMaximumSize(new java.awt.Dimension(50, 88));
+        txtH.setMinimumSize(new java.awt.Dimension(50, 88));
+        txtH.setPreferredSize(new java.awt.Dimension(50, 88));
+        txtH.setRequestFocusEnabled(false);
+        txtH.setVerifyInputWhenFocusTarget(false);
+
+        txtO.setEditable(false);
+        txtO.setBackground(new java.awt.Color(204, 204, 204));
+        txtO.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtO.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtO.setMaximumSize(new java.awt.Dimension(50, 88));
+        txtO.setMinimumSize(new java.awt.Dimension(50, 88));
+        txtO.setPreferredSize(new java.awt.Dimension(50, 88));
+        txtO.setRequestFocusEnabled(false);
+
+        txtR.setEditable(false);
+        txtR.setBackground(new java.awt.Color(204, 204, 204));
+        txtR.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtR.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtR.setMaximumSize(new java.awt.Dimension(50, 88));
+        txtR.setMinimumSize(new java.awt.Dimension(50, 88));
+        txtR.setPreferredSize(new java.awt.Dimension(50, 88));
+        txtR.setRequestFocusEnabled(false);
+
+        txtC.setEditable(false);
+        txtC.setBackground(new java.awt.Color(204, 204, 204));
+        txtC.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtC.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtC.setMaximumSize(new java.awt.Dimension(50, 88));
+        txtC.setMinimumSize(new java.awt.Dimension(50, 88));
+        txtC.setPreferredSize(new java.awt.Dimension(50, 88));
+        txtC.setRequestFocusEnabled(false);
+
+        txtD.setEditable(false);
+        txtD.setBackground(new java.awt.Color(204, 204, 204));
+        txtD.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtD.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtD.setMaximumSize(new java.awt.Dimension(50, 88));
+        txtD.setMinimumSize(new java.awt.Dimension(50, 88));
+        txtD.setPreferredSize(new java.awt.Dimension(50, 88));
+        txtD.setRequestFocusEnabled(false);
+
+        txtA4.setEditable(false);
+        txtA4.setBackground(new java.awt.Color(204, 204, 204));
+        txtA4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtA4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtA4.setMaximumSize(new java.awt.Dimension(50, 88));
+        txtA4.setMinimumSize(new java.awt.Dimension(50, 88));
+        txtA4.setName(""); // NOI18N
+        txtA4.setPreferredSize(new java.awt.Dimension(50, 88));
+        txtA4.setRequestFocusEnabled(false);
+        txtA4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtA4ActionPerformed(evt);
+            }
+        });
+
+        txtO2.setEditable(false);
+        txtO2.setBackground(new java.awt.Color(204, 204, 204));
+        txtO2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtO2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtO2.setMaximumSize(new java.awt.Dimension(50, 88));
+        txtO2.setMinimumSize(new java.awt.Dimension(50, 88));
+        txtO2.setPreferredSize(new java.awt.Dimension(50, 88));
+        txtO2.setRequestFocusEnabled(false);
+
         javax.swing.GroupLayout background_ahorcadoLayout = new javax.swing.GroupLayout(background_ahorcado);
         background_ahorcado.setLayout(background_ahorcadoLayout);
         background_ahorcadoLayout.setHorizontalGroup(
@@ -695,7 +887,7 @@ public class AhorcadoNivel4 extends javax.swing.JFrame {
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                                 .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(a_facil)
                                     .addComponent(k_facil))
@@ -767,17 +959,33 @@ public class AhorcadoNivel4 extends javax.swing.JFrame {
                                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(background_ahorcadoLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(btnVolver1)))
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblIntentos)
-                        .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblPuntaje))))
+                                .addComponent(btnVolver1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtA4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtO2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)))
+                .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblIntentos)
+                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblPuntaje))))
+                    .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -787,24 +995,32 @@ public class AhorcadoNivel4 extends javax.swing.JFrame {
             .addGroup(background_ahorcadoLayout.createSequentialGroup()
                 .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(background_ahorcadoLayout.createSequentialGroup()
                                 .addComponent(lblPuntaje)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lblIntentos))
-                            .addComponent(btnVolver1))))
-                .addGap(18, 18, 18)
+                            .addComponent(btnVolver1)))
+                    .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtH, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtO, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtR, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtC, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtA4, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtD, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtA, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtO2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(7, 7, 7)
                 .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(background_ahorcadoLayout.createSequentialGroup()
                         .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(33, Short.MAX_VALUE))
+                        .addContainerGap(27, Short.MAX_VALUE))
                     .addGroup(background_ahorcadoLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -981,6 +1197,10 @@ public class AhorcadoNivel4 extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnVolver1ActionPerformed
 
+    private void txtA4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtA4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtA4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1029,12 +1249,16 @@ public class AhorcadoNivel4 extends javax.swing.JFrame {
     private javax.swing.JButton g_facil;
     private javax.swing.JButton h_facil;
     private javax.swing.JButton i_facil;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1062,6 +1286,14 @@ public class AhorcadoNivel4 extends javax.swing.JFrame {
     private javax.swing.JButton r_facil;
     private javax.swing.JButton s_facil;
     private javax.swing.JButton t_facil;
+    private javax.swing.JTextField txtA;
+    private javax.swing.JTextField txtA4;
+    private javax.swing.JTextField txtC;
+    private javax.swing.JTextField txtD;
+    private javax.swing.JTextField txtH;
+    private javax.swing.JTextField txtO;
+    private javax.swing.JTextField txtO2;
+    private javax.swing.JTextField txtR;
     private javax.swing.JButton u_facil;
     private javax.swing.JButton v_facil;
     private javax.swing.JButton w_facil;

@@ -118,7 +118,7 @@ public class ayuda extends javax.swing.JFrame {
 
     public void iniciar() {
         lblPuntaje.setText("Puntaje= " + puntaje);
-        lblIntentos.setText("Intentos= " + intentos);
+        //lblIntentos.setText("intentos= " + intentos);
         err = 0;
         jTextPane1.setText("");
         ran = new Random().nextInt(palabras.length);
@@ -151,7 +151,9 @@ public class ayuda extends javax.swing.JFrame {
         JButton bt = (JButton) e.getSource();
         char[] c;
         intentos++;
-        lblIntentos.setText("Intentos= " + intentos);
+        float op =0 ;
+        float op2 = 0;
+        //lblIntentos.setText("Intentos= " + intentos);
 
         for (int i = 1; i < 27; i++) {
             if (bt == btns[i]) {
@@ -206,9 +208,12 @@ public class ayuda extends javax.swing.JFrame {
                 } else {
                     err++;
                     puntaje -= 1;
-                    lblPuntaje.setText("Puntaje= " + puntaje);
-
-                     String palabraError = "AHORCADO";
+                    
+                    op = (err *100)/8;
+                    //lblPuntaje.setText("Puntaje= " + puntaje);
+                    lblIntentos.setText("Errores=" +err);
+                    lblPorcentaje.setText("Porcentaje= "+op+"%");
+                    String palabraError = "AHORCADO";
                     if (err <= palabraError.length()) {
                         txtFields[err - 1].setText(String.valueOf(palabraError.charAt(err - 1)));
                     }
@@ -291,6 +296,7 @@ public class ayuda extends javax.swing.JFrame {
         txtD = new javax.swing.JTextField();
         txtA2 = new javax.swing.JTextField();
         txtC = new javax.swing.JTextField();
+        lblPorcentaje = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -759,6 +765,8 @@ public class ayuda extends javax.swing.JFrame {
         txtC.setPreferredSize(new java.awt.Dimension(50, 88));
         txtC.setRequestFocusEnabled(false);
 
+        lblPorcentaje.setText("...");
+
         javax.swing.GroupLayout background_ahorcadoLayout = new javax.swing.GroupLayout(background_ahorcado);
         background_ahorcado.setLayout(background_ahorcadoLayout);
         background_ahorcadoLayout.setHorizontalGroup(
@@ -860,17 +868,23 @@ public class ayuda extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtO2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)))
-                .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblIntentos)
-                        .addGroup(background_ahorcadoLayout.createSequentialGroup()
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblPuntaje))))
-                .addContainerGap(42, Short.MAX_VALUE))
+                        .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(21, 21, 21)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblIntentos)
+                                .addGroup(background_ahorcadoLayout.createSequentialGroup()
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblPuntaje))))
+                        .addContainerGap(42, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, background_ahorcadoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblPorcentaje)
+                        .addGap(65, 65, 65))))
         );
         background_ahorcadoLayout.setVerticalGroup(
             background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -900,7 +914,8 @@ public class ayuda extends javax.swing.JFrame {
                             .addComponent(txtA2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtD, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtA, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtO2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtO2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblPorcentaje))
                         .addGap(28, 28, 28)
                         .addGroup(background_ahorcadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnFrase)
@@ -1144,6 +1159,7 @@ public class ayuda extends javax.swing.JFrame {
     private javax.swing.JButton k_facil;
     private javax.swing.JButton l_facil;
     private javax.swing.JLabel lblIntentos;
+    private javax.swing.JLabel lblPorcentaje;
     private javax.swing.JLabel lblPuntaje;
     private javax.swing.JButton m_facil;
     private javax.swing.JButton n_facil;

@@ -108,7 +108,6 @@ public class TableroBuscaminas {
                     && tmpPosColumna>=0 && tmpPosColumna<this.casillas[0].length){
                 listaCasillas.add(this.casillas[tmpPosFila][tmpPosColumna]);
             }
-            
         }
         return listaCasillas;
     }

@@ -5,6 +5,7 @@
 package com.mycompany.proyecto_poo;
 
 import com.ahorcado.AhorcadoInicio;
+import com.buscaMinas.FrameJuego;
 import com.ahorcado.menuAhorcado;
 /**
  *
@@ -56,6 +57,11 @@ public class Inicio extends javax.swing.JFrame {
 
         btnBuscaMinas.setFont(new java.awt.Font("Avocado Cake", 0, 14)); // NOI18N
         btnBuscaMinas.setText("Busca Minas");
+        btnBuscaMinas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscaMinasActionPerformed(evt);
+            }
+        });
         background_inicio.add(btnBuscaMinas, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 216, 120, 30));
 
         btnAhorcado.setFont(new java.awt.Font("Avocado Cake", 0, 14)); // NOI18N
@@ -141,6 +147,12 @@ public class Inicio extends javax.swing.JFrame {
         jLogin.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
+
+    private void btnBuscaMinasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaMinasActionPerformed
+       FrameJuego buscaMinasj = new FrameJuego();
+       buscaMinasj.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnBuscaMinasActionPerformed
 
     /**
      * @param args the command line arguments
